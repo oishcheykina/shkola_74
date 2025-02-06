@@ -1,0 +1,190 @@
+{% load static %}
+{% load i18n %}
+
+<aside class="col-md-4 col-sm-4">
+
+    <div class="box-style-1 ribbon borders">
+        <style media="screen">
+            .main-chief {
+                width: 100%;
+            }
+
+            .main-chief img {
+                width: 100%;
+            }
+
+            .main-chief-desc {
+                border-left: 5px solid #f54e5a;
+                padding-left: 20px;
+            }
+
+            .main-chief-img {
+                margin-bottom: 15px;
+            }
+
+            .main-chief-name {
+                line-height: 1.4;
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+            .carousel-container {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+        </style>
+        
+        <div class="carousel-container">
+            {% for admin in admins %}
+            <div class="main-chief">
+                <div class="main-chief-img img-box">
+                    <img id="chiefImage1" src="{{ admin.image.url }}" alt="Rasm">
+                </div>
+                <div class="main-chief-desc">
+                    <div id="chiefName1" class="main-chief-name">
+                        {{ admin.name }}
+                    </div>
+                    <div id="chiefPosition1" class="main-chief-position">
+                        {{ admin.field }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <hr/>
+        <div class="feat">
+            <i class="icon-rss icon-3x"></i>
+            <h3><a href="{% url 'announcements' %}" style="color:black">{% trans 'Объявления' %}</a></h3>
+        </div>
+
+        <hr class="double">
+
+        <div class="feat">
+            <i class="icon-print icon-3x"></i>
+            <h3> <a href="{% url 'foto_galery' %}" style="color:black">{% trans 'Фотогалерея' %}</a></h3>
+            <p>{% blocktrans %}Вы можете посмотреть фотографии в фотогалерее{% endblocktrans %}</p>
+        </div>
+
+        <hr class="double">
+
+        <div class="feat">
+            <i class="icon-play icon-3x"></i>
+            <h3> <a href="https://www.youtube.com/@denov74maktab" style="color:black">{% trans 'Видеогалерея' %}</a></h3>
+            <p>{% blocktrans %}Вы можете посмотреть видео по всем предметам{% endblocktrans %}</p>
+        </div>
+
+        <hr class="double">
+
+        <div class="feat">
+            <i class="icon-play-circle icon-3x"></i>
+            <h3><a href="https://maktab.uz/" style="color:black">{% trans 'Библиотека видеоуроков' %}</a></h3>
+            <p>{% blocktrans %}Самая большая библиотека видеоуроков{% endblocktrans %}</p>
+        </div>
+        <hr class="double">
+
+        <div class="feat">
+            <i class="icon-book icon-3x"></i>
+            <h3><a href="https://www.kitob.uz/" style="color:black">{% trans 'Электронная библиотека' %}</a></h3>
+            <p>{% blocktrans %}Коллекция самых нужных книг для учителей и учеников{% endblocktrans %}</p>
+        </div>
+
+        <hr class="double">
+
+        <div class="feat last">
+            <i class="icon-laptop icon-3x"></i>
+            <h3><a href="https://login.emaktab.uz/" style="color:black">{% trans 'Расписание уроков' %}</a></h3>
+            <p>{% blocktrans %}Ученики и родители могут наблюдать за расписанием онлайн на нашем сайте{% endblocktrans %}</p>
+        </div>
+
+    </div>
+    <div class="col-left">
+        <h3>{% trans 'Программа года' %}</h3>
+        <p><a href="/matbuot-xizmati/davlat-dasturlari.html" title="All courses"><img
+                    src="{{ yil_dasturi.image.url }}" alt="Banner" class="img-rounded img-responsive"></a></p>
+    </div>
+
+    <!-- <p>
+<div id="calendar-layer">
+    <table id="calendar" class="calendar">
+        <tr>
+            <th colspan="7" class="monthselect"><a class="monthlink"
+                    onclick="doCalendar('12','2024','right'); return false;" href="./2024/12/"
+                    title="Предыдущий месяц">&laquo;</a>&nbsp;&nbsp;&nbsp;&nbsp;Январь
+                2025&nbsp;&nbsp;&nbsp;&nbsp;&raquo;</th>
+        </tr>
+        <tr>
+            <th class="workday">Пн</th>
+            <th class="workday">Вт</th>
+            <th class="workday">Ср</th>
+            <th class="workday">Чт</th>
+            <th class="workday">Пт</th>
+            <th class="weekday">Сб</th>
+            <th class="weekday">Вс</th>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+            <td class="day">1</td>
+            <td class="day-active-v"><a class="day-active-v" href="./2025/01/02/"
+                    title="Все публикации за 02 января 2025">2</a></td>
+            <td class="day-active-v"><a class="day-active-v" href="./2025/01/03/"
+                    title="Все публикации за 03 января 2025">3</a></td>
+            <td class="weekday">4</td>
+            <td class="weekday">5</td>
+        </tr>
+        <tr>
+            <td class="day-active-v"><a class="day-active-v" href="./2025/01/06/"
+                    title="Все публикации за 06 января 2025">6</a></td>
+            <td class="day">7</td>
+            <td class="day-active-v"><a class="day-active-v" href="./2025/01/08/"
+                    title="Все публикации за 08 января 2025">8</a></td>
+            <td class="day">9</td>
+            <td class="day">10</td>
+            <td class="weekday">11</td>
+            <td class="weekday">12</td>
+        </tr>
+        <tr>
+            <td class="day-active-v"><a class="day-active-v" href="./2025/01/13/"
+                    title="Все публикации за 13 января 2025">13</a></td>
+            <td class="day-active-v"><a class="day-active-v" href="./2025/01/14/"
+                    title="Все публикации за 14 января 2025">14</a></td>
+            <td class="day">15</td>
+            <td class="day">16</td>
+            <td class="day">17</td>
+            <td class="weekday day-current">18</td>
+            <td class="weekday">19</td>
+        </tr>
+        <tr>
+            <td class="day">20</td>
+            <td class="day">21</td>
+            <td class="day">22</td>
+            <td class="day">23</td>
+            <td class="day">24</td>
+            <td class="weekday">25</td>
+            <td class="weekday">26</td>
+        </tr>
+        <tr>
+            <td class="day">27</td>
+            <td class="day">28</td>
+            <td class="day">29</td>
+            <td class="day">30</td>
+            <td class="day">31</td>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+    </table>
+</div>
+</p>
+
+
+<div class="col-left">
+    <h3>Bog'lanish</h3>
+    <ul>
+        <li><i class="icon-home"></i> 100000, Surxondaryo viloyati denov tumani 74-maktab</li>
+        <li><i class="icon-phone"></i> Telefon: 0 371 236-26-46 </li>
+        <li><i class="icon-phone-sign"></i> Fax: 0 371 236-26-46</li>
+        <li><i class="icon-envelope"></i> Email: <a
+                href="mailto:y-74maktab@inbox.uz">y-74maktab@inbox.uz</a></li>
+    </ul>
+</div> -->
+
+
+</aside>

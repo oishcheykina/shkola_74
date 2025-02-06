@@ -1,0 +1,287 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en" class=" js no-touch csstransforms csstransitions">
+
+<head>
+    <meta charset="utf-8">
+    <title>Surxondaryo Viloyati Denov Tumani 74-maktab</title>
+    <meta name="description" content="Surxondaryo Viloyati Denov Tumani 74-maktab">
+    <meta name="keywords" content="toshkent shahri, maktab, yunusobod maktab, yunusobot tumani maktab">
+    <meta name="generator" content="DataLife Engine (http://dle-news.ru)">
+    <link rel="search" type="application/opensearchdescription+xml" href="/"
+        title="Surxondaryo Viloyati Denov Tumani 74-maktab">
+    <link rel="canonical" href="/">
+    <link rel="alternate" type="application/rss+xml" title="Surxondaryo Viloyati Denov Tumani 74-maktab" href="/">
+    <link href="{% static 'css/default.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/jqueryui.js' %}" defer></script>
+    <script src="{% static 'js/dle_js.js' %}" defer></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="author" content="Ansonika">
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="http://www.ansonika.com/edu/img/favicon.ico" type="image/x-icon">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/megamenu.css' %}" rel="stylesheet">
+    <link href="{% static 'css/engine.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <link href="{% static 'css/default.css' %}" rel="stylesheet">
+    <link href="{% static 'css/jquery.fancybox.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- REVOLUTION BANNER CSS SETTINGS -->
+
+    <!--[if lt IE 9]>                                                                                                   
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>                                          
+<![endif]-->
+
+    <!-- Jquery -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <!-- Support media queries for IE8 -->
+    <script src="{% static 'js/respond.min.js' %}"></script>
+
+    <!-- HTML5 and CSS3-in older browsers-->
+    <script src="{% static 'js/modernizr.custom.17475.js' %}"></script>
+
+    <!-- Fonts-->
+</head>
+
+<body onload="startTime()">
+    {% include 'details/header.html' %}
+
+    <div class="container">
+        <div class="row">
+            {% include 'details/leftcolumn.html' %}
+
+            <section class="col-md-8 col-sm-8">
+                <div class="col-right">
+                    {% for post in page_obj %}
+                    <div class="strip-lessons">
+                        <div class="row">
+                            <div class="col-md-3 col-xs-6">
+                                <div class="box-style-one"><img
+                                        src="{{ post.image.url }}"
+                                        alt="" class="picture img-responsive"></div>
+                            </div>
+                            <div class="clearfix visible-xs-block"></div>
+                            <div class="col-md-9">
+
+                                <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
+
+                                <p>
+                                    {{ post.content|truncatechars:230 }}
+                                </p>
+                                <ul class="data-lessons">
+                                    <li><i class="icon-time"></i>{{ post.created_at|time:"H:i" }} / {{ post.created_at|date:"d.m.Y" }}</li>
+                                    <li><i class="icon-cloud-download"></i><a
+                                            href="{{ post.get_absolute_url }}">{% trans 'Подробно' %}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    {% if page_obj.has_other_pages %}
+
+                    <div class="text-center">
+                        <ul class="pagination">
+                            <!-- Кнопка "Oldingi" (назад) -->
+                            {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">{% trans 'Предыдущая' %}</a></li>
+                            {% else %}
+                                <li><span>{% trans 'Предыдущая' %}</span></li>
+                            {% endif %}
+                    
+                            <!-- Всегда показываем первую страницу -->
+                            <li><a href="?page=1">1</a></li>
+                    
+                            <!-- Многоточие перед серединой, если нужно -->
+                            {% if page_obj.number > 4 %}
+                                <li><span>...</span></li>
+                            {% endif %}
+                    
+                            <!-- Основные страницы (исключаем 1 и последнюю) -->
+                            {% for num in page_obj.paginator.page_range %}
+                                {% if num > 1 and num < page_obj.paginator.num_pages %}
+                                    {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                                        {% if num == page_obj.number %}
+                                            <li><span class="nav_ext">{{ num }}</span></li>  {# Текущая страница #}
+                                        {% else %}
+                                            <li><a href="?page={{ num }}">{{ num }}</a></li>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                    
+                            <!-- Многоточие перед последней страницей, если нужно -->
+                            {% if page_obj.number < page_obj.paginator.num_pages|add:-3 %}
+                                <li><span>...</span></li>
+                            {% endif %}
+                    
+                            <!-- Всегда показываем последнюю страницу -->
+                            <li><a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></li>
+                    
+                            <!-- Кнопка "Keyingi" (вперёд) -->
+                            {% if page_obj.has_next %}
+                                <li><a href="?page={{ page_obj.next_page_number }}">{% trans 'Следующая' %}</a></li>
+                            {% else %}
+                                <li><span>{% trans 'Следующая' %}</span></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+
+            </section>
+
+        </div>
+
+
+
+
+        <style media="screen">
+            .linkText.linkText3 li {
+                padding: 0px 10px 0px 80px;
+                margin: 0 0 0 20px;
+                border-bottom: none;
+                border-radius: 40px 0px 0px 40px;
+            }
+
+            .linkText li {
+                width: 100%;
+                display: inline-block;
+                position: relative;
+                margin: 0 0 0 5px;
+                padding: 0 0 0 58px;
+                min-height: 60px;
+                text-decoration: none;
+                border-bottom: 1px solid #e4e4e4;
+            }
+
+            .linkText.linkText3 li a {
+                width: inherit;
+                height: 70px;
+                color: #373737;
+            }
+
+            .linkText li a {
+                display: table-cell;
+                vertical-align: middle;
+                height: 60px;
+                color: #6a6a6a;
+                line-height: 1.3;
+                text-decoration: none;
+            }
+
+            .linkText.linkText3 li a .listImg {
+                border-radius: 0%;
+                border: none;
+                width: 65px;
+                height: 65px;
+                left: 0;
+                top: 0;
+                border-radius: 40px;
+            }
+
+            .linkText li a .listImg {
+                position: absolute;
+                width: 40px;
+                left: 0;
+                /* margin: 0 0 0 5px; */
+                text-align: center;
+            }
+
+            .linkText li a .listImg img {
+                position: relative;
+                top: 50%;
+                left: 0;
+                margin: -24px 0px 0px 0px;
+            }
+        </style>
+
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+
+        {% include 'details/ministerstvo.html' %}
+
+        <style media="screen">
+            body {
+                background: aliceblue;
+            }
+
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            .brand-carousel {
+                background: aliceblue;
+            }
+
+            .owl-dots {
+                text-align: center;
+                margin-top: 4%;
+            }
+
+            .owl-dot {
+                display: inline-block;
+                height: 15px !important;
+                width: 15px !important;
+                background-color: #878787 !important;
+                opacity: 0.8;
+                border-radius: 50%;
+                margin: 0 5px;
+            }
+
+            .owl-dot.active {
+                background-color: #000 !important;
+            }
+        </style>
+
+        <script type="text/javascript">
+            $(".brand-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    600: {
+                        items: 3,
+                    },
+                    1000: {
+                        items: 4,
+                    },
+                },
+            });
+        </script>
+    </div><!-- end container-->
+
+
+    {% include 'details/footer.html' %}
+    <div id="toTop" style="display: none;"> <i class="fa-solid fa-arrow-up" style="color: #db0000; font-size: 30px;"></i></div>
+    {% include 'details/scripts.html' %}
+
+
+
+</body>
+
+</html>
+
+<!-- Veb-sayt Cyber tomonidan Clon qilindi -->

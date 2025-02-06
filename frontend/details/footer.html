@@ -1,0 +1,44 @@
+{% load static %}
+{% load i18n %}
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <p><img src="/static/images/17.png" style="width: 100%; max-width: 100%;" alt="">
+                </p>
+                <p>Copyright © 2025 by Olesya Ishcheykina</p>
+                <p> </p>
+                <p>{% blocktrans %}Все права защищены в рамках действующего законодательства.{% endblocktrans %}</p>
+            </div>
+            <div class="col-md-4 col-sm-4" id="contacts-footer">
+                <h4>{% trans 'Связаться' %}</h4>
+                <ul>
+                    <li><i class="icon-location-arrow"></i>{% blocktrans %}Сурхандарьинская область Денауский район город Денау махалля Суфи Оллаёр улица М.Барака{% endblocktrans %}</li>
+                    <li><i class="icon-phone"></i> {% trans 'Телефон ' %}: +998(93)639-91-74 </li>
+                    <li><i class="icon-phone-sign"></i> Fax: +998(93)639-91-74</li>
+                    <li><i class="icon-envelope"></i> Email: <a
+                            href="mailto:y-17maktab@inbox.uz">74maktab@inbox.uz</a></li>
+                    <li><i class="icon-home"></i>{% blocktrans %}Сурхандарьинская область Денауский район школа №74{% endblocktrans %}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-4" id="quick-links">
+                <h4>{% trans 'Подписаться' %}</h4>
+                
+
+                <div id="message-newsletter"></div>
+                <form method="post" action="#" name="newsletter" id="newsletter" class="form-inline">
+                    <input name="email_newsletter" id="email_newsletter" type="email" value=""
+                        placeholder="Email" class="form-control">
+                        <a href="https://t.me/shkola74Denau">
+                    <button id="submit-newsletter" class="button_medium add-bottom-20"
+                        style="top:2px; position:relative">{% trans 'Подписаться' %}</button>
+                    </a>
+                </form>
+                
+            </div>
+
+        </div>
+    </div>
+</footer><!-- End footer-->

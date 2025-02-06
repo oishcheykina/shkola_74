@@ -1,0 +1,489 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 13:29+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\frontend\details\footer.html:12
+msgid "Все права защищены в рамках действующего законодательства."
+msgstr "Barcha huquqlar amaldagi qonunchilik doirasida himoyalangan."
+
+#: .\frontend\details\footer.html:15
+msgid "Связаться"
+msgstr "Bog'lanish"
+
+#: .\frontend\details\footer.html:17 .\frontend\index.html:262
+msgid ""
+"Сурхандарьинская область Денауский район город Денау махалля Суфи Оллаёр "
+"улица М.Барака"
+msgstr ""
+"Surxondaryo viloyati Denov tumani Denov shahar, Sufi Ollayor MFY M.Baraka "
+"ko'chasi"
+
+#: .\frontend\details\footer.html:18
+#, fuzzy
+#| msgid "Телефон"
+msgid "Телефон "
+msgstr "Telefon"
+
+#: .\frontend\details\footer.html:22 .\frontend\index.html:230
+#: .\frontend\maktab\maktab-nizomi.html:100
+msgid "Сурхандарьинская область Денауский район школа №74"
+msgstr "Surxondaryo viloyati Denov tumani 74-maktab"
+
+#: .\frontend\details\footer.html:27 .\frontend\details\footer.html:36
+msgid "Подписаться"
+msgstr "Obuna bo'lish"
+
+#: .\frontend\details\header.html:6
+msgid "Последнее обновление данных"
+msgstr "Ma'lumotlarning so'nggi yangilanishi"
+
+#: .\frontend\details\header.html:9
+#: .\frontend\maktab\bosh-ish-orinlari.html:104
+#: .\frontend\maktab\lavozim-majburiyatlari.html:104
+#: .\frontend\maktab\maktab-direktori.html:104
+#: .\frontend\maktab\maktab-jamoasi.html:104
+#: .\frontend\maktab\maktab-madhiyasi.html:103
+#: .\frontend\maktab\maktab-nizomi.html:104
+#: .\frontend\maktab\qabul-kunlari.html:103
+#: .\frontend\maktab\tarkibiy-tuzilma.html:103
+#: .\frontend\oqituvchilarga\maktab-jamoasi.html:104
+#: .\frontend\oquvchilarga\imtihon-materiallari.html:103
+#: .\frontend\oquvchilarga\qongiroqlar-jadvali.html:104
+#: .\frontend\oquvchilarga\togaraklar-jadvali.html:104
+msgid "Главная"
+msgstr "Bosh sahifa"
+
+#: .\frontend\details\header.html:11
+msgid "Мобильная версия"
+msgstr "Mobil versiya"
+
+#: .\frontend\details\header.html:31
+msgid "Горячая линия"
+msgstr "Ishonch telefoni"
+
+#: .\frontend\details\header.html:35
+msgid "Поиск данных по сайту"
+msgstr "Sayt bo'yicha ma'lumot qidirish"
+
+#: .\frontend\details\header.html:113
+msgid "Меню"
+msgstr "Menyu"
+
+#: .\frontend\details\header.html:115
+msgid "Школа"
+msgstr "Maktab"
+
+#: .\frontend\details\header.html:118
+#: .\frontend\maktab\maktab-direktori.html:99
+msgid "Директор школы"
+msgstr "Maktab direktori"
+
+#: .\frontend\details\header.html:120 .\frontend\maktab\maktab-jamoasi.html:100
+msgid "Администрация школы"
+msgstr "Maktab jamoasi"
+
+#: .\frontend\details\header.html:124
+#: .\frontend\maktab\lavozim-majburiyatlari.html:100
+msgid "Должностные обязанности"
+msgstr "Lavozim majburiyatlari"
+
+#: .\frontend\details\header.html:128
+#: .\frontend\maktab\tarkibiy-tuzilma.html:99
+msgid "Структурная организация"
+msgstr "Tarkibiy tuzilma"
+
+#: .\frontend\details\header.html:131
+msgid "Устав школы"
+msgstr "Maktab nizomi"
+
+#: .\frontend\details\header.html:134 .\frontend\index.html:122
+#: .\frontend\maktab\maktab-madhiyasi.html:99
+msgid "Гимн школы"
+msgstr "Maktab madhiyasi"
+
+#: .\frontend\details\header.html:137
+#: .\frontend\maktab\maktab-direktori.html:115
+#: .\frontend\maktab\qabul-kunlari.html:99
+msgid "Дни приема"
+msgstr "Qabul kunlari"
+
+#: .\frontend\details\header.html:141
+#: .\frontend\maktab\bosh-ish-orinlari.html:100
+msgid "Свободные вакансии"
+msgstr "Bo'sh ish o'rinlari"
+
+#: .\frontend\details\header.html:147
+msgid "Учителям"
+msgstr "O'qituvchilarga"
+
+#: .\frontend\details\header.html:151
+#: .\frontend\oqituvchilarga\maktab-jamoasi.html:100
+msgid "Гордость школы"
+msgstr "Maktab faxri"
+
+#: .\frontend\details\header.html:154
+msgid "Разработки открытых уроков"
+msgstr "Ochiq dars ishlanmalari"
+
+#: .\frontend\details\header.html:157
+msgid "Тесты по предметам"
+msgstr "Fanlar bo'yicha testlar"
+
+#: .\frontend\details\header.html:160
+msgid "Профсоюз"
+msgstr "Kasaba uyushmasi"
+
+#: .\frontend\details\header.html:166
+msgid "Ученикам"
+msgstr "O'quvchilarga"
+
+#: .\frontend\details\header.html:169 .\frontend\details\leftcolumn.html:95
+msgid "Расписание уроков"
+msgstr "Dars jadvali"
+
+#: .\frontend\details\header.html:173
+#: .\frontend\oquvchilarga\qongiroqlar-jadvali.html:100
+msgid "Расписание звонков"
+msgstr "Qo'ng'iroqlar jadvali"
+
+#: .\frontend\details\header.html:177
+msgid "Экзаминационные материалы"
+msgstr "Imtihon materiallari"
+
+#: .\frontend\details\header.html:181
+msgid "Расписание кружков"
+msgstr "To'garaklar jadvali"
+
+#: .\frontend\details\header.html:187
+msgid "Родителям"
+msgstr "Ota-onalarga"
+
+#: .\frontend\details\header.html:192
+msgid "Права и обязанности"
+msgstr "Huquq va majburiyatlar"
+
+#: .\frontend\details\header.html:196
+msgid "Принятие учеников в школу"
+msgstr "O'quvchilarni maktabga qabul qilish"
+
+#: .\frontend\details\header.html:202
+msgid "Пресс-служба"
+msgstr "Matbuot xizmati"
+
+#: .\frontend\details\header.html:206
+#, fuzzy
+#| msgid "Новости"
+msgid "Нововсти"
+msgstr "Yangiliklar"
+
+#: .\frontend\details\header.html:210 .\frontend\details\leftcolumn.html:57
+msgid "Объявления"
+msgstr "E'lonlar"
+
+#: .\frontend\details\header.html:215 .\frontend\details\leftcolumn.html:64
+msgid "Фотогалерея"
+msgstr "Fotogalereya"
+
+#: .\frontend\details\header.html:218 .\frontend\details\leftcolumn.html:72
+msgid "Видеогалерея"
+msgstr "Videogalereya"
+
+#: .\frontend\details\header.html:222
+#, fuzzy
+#| msgid "Государственные символы"
+msgid "Государственные программы"
+msgstr "Davlat dasturlari"
+
+#: .\frontend\details\header.html:229
+msgid "Нормативные документы"
+msgstr "Normativ hujjatlar"
+
+#: .\frontend\details\header.html:233
+msgid "Указы, распоряжения и Постановления Президента"
+msgstr "Prezident farmonlari, qarorlari va farmoyishlari"
+
+#: .\frontend\details\header.html:237
+msgid "Решения Коллегии Министерства народного образования"
+msgstr "Xalq ta’limi vazirligi hay’ati qarorlari"
+
+#: .\frontend\details\header.html:240
+msgid ""
+"Нормативные документы департамента народного образования денауского района"
+msgstr "Denov tumani xalq ta’limi bo‘limining normativ hujjatlari"
+
+#: .\frontend\details\header.html:246
+msgid "Государственные символы"
+msgstr "Davlat ramzlari"
+
+#: .\frontend\details\header.html:250
+msgid "Герб Республики Узбекистан"
+msgstr "O‘zbekiston Respublikasi Davlat gerbi"
+
+#: .\frontend\details\header.html:253
+msgid "Флаг Республики Узбекистан"
+msgstr "O‘zbekiston Respublikasi Davlat bayrog‘i"
+
+#: .\frontend\details\header.html:256
+msgid "Гимн Республики Узбекистан"
+msgstr "O‘zbekiston Respublikasi Davlat madhiyasi"
+
+#: .\frontend\details\leftcolumn.html:65
+msgid "Вы можете посмотреть фотографии в фотогалерее"
+msgstr "Siz fotoqalereyada rasmlarni ko'rib chiqishingiz mumkin"
+
+#: .\frontend\details\leftcolumn.html:73
+msgid "Вы можете посмотреть видео по всем предметам"
+msgstr "Siz barcha fanlarga oid videolarni ko'rib chiqishingiz mumkin"
+
+#: .\frontend\details\leftcolumn.html:80
+#, fuzzy
+#| msgid "Расписание уроков"
+msgid "Библиотека видеоуроков"
+msgstr "Video darslar kutubxonasi"
+
+#: .\frontend\details\leftcolumn.html:81
+msgid "Самая большая библиотека видеоуроков"
+msgstr "Eng katta video darslar kutubxonasi"
+
+#: .\frontend\details\leftcolumn.html:87
+msgid "Электронная библиотека"
+msgstr "Elektron kutubxona"
+
+#: .\frontend\details\leftcolumn.html:88
+msgid "Коллекция самых нужных книг для учителей и учеников"
+msgstr "O'qituvchilar va o'quvchilar uchun eng zarur kitoblar to'plami"
+
+#: .\frontend\details\leftcolumn.html:96
+msgid "Ученики и родители могут наблюдать за расписанием онлайн на нашем сайте"
+msgstr ""
+"O'quvchilar va ota-onalar bizning saytimizda onlayn dars jadvalini "
+"kuzatishlari mumkin"
+
+#: .\frontend\details\leftcolumn.html:101
+msgid "Программа года"
+msgstr "Yil dasturi"
+
+#: .\frontend\index.html:100
+msgid "Кружки"
+msgstr "To'garaklar"
+
+#: .\frontend\index.html:101
+msgid ""
+"Кружки в нашей школе для более продуктивного проведения досуга учащихся\n"
+"                            организованы."
+msgstr ""
+"Maktabimizda o'quvchilarning bo'sh vaqtini samaraliroq o'tkazish uchun turli "
+"to'garaklar tashkil etilgan."
+
+#: .\frontend\index.html:111
+msgid "Обращение"
+msgstr "Murojaat"
+
+#: .\frontend\index.html:112
+msgid ""
+"Оставить электронное обращение к директору можно через сайт. Ответ на ваше "
+"обращение\n"
+"                            вы можете узнать через сайт."
+msgstr ""
+"Siz direktorga elektron murojaat qoldirishingiz mumkin. Murojaatingizga "
+"javobni sayt orqali bilib olishingiz mumkin."
+
+#: .\frontend\index.html:123
+msgid ""
+"Гимн нашей школы-наше счастье, наша гордость, наша гордость-воспевает, что "
+"мы его никогда не забудем!"
+msgstr ""
+"Maktabimiz madhiyasi — bu bizning baxtimiz, g'ururimizdir. U bizni unutmagan "
+"holda g'ururimizni ta'kidlaydi!"
+
+#: .\frontend\index.html:140 .\frontend\matbuot-xizmati\foto-galereya.html:69
+#: .\frontend\matbuot-xizmati\yangiliklar.html:69
+msgid "Новости"
+msgstr "Yangiliklar"
+
+#: .\frontend\index.html:161 .\frontend\matbuot-xizmati\foto-galereya.html:90
+#: .\frontend\matbuot-xizmati\yangiliklar.html:90
+msgid "Подробно"
+msgstr "Batafsil"
+
+#: .\frontend\index.html:175 .\frontend\index.html:177
+#: .\frontend\matbuot-xizmati\foto-galereya.html:104
+#: .\frontend\matbuot-xizmati\foto-galereya.html:106
+#: .\frontend\matbuot-xizmati\yangiliklar.html:104
+#: .\frontend\matbuot-xizmati\yangiliklar.html:106
+#: .\frontend\oqituvchilarga\maktab-jamoasi.html:131
+#: .\frontend\oqituvchilarga\maktab-jamoasi.html:133
+msgid "Предыдущая"
+msgstr "Oldingi"
+
+#: .\frontend\index.html:211 .\frontend\index.html:213
+#: .\frontend\matbuot-xizmati\foto-galereya.html:140
+#: .\frontend\matbuot-xizmati\foto-galereya.html:142
+#: .\frontend\matbuot-xizmati\yangiliklar.html:140
+#: .\frontend\matbuot-xizmati\yangiliklar.html:142
+#: .\frontend\oqituvchilarga\maktab-jamoasi.html:167
+#: .\frontend\oqituvchilarga\maktab-jamoasi.html:169
+msgid "Следующая"
+msgstr "Keyingi"
+
+#: .\frontend\index.html:239
+#, fuzzy
+#| msgid "Гимн школы"
+msgid "Тип школы"
+msgstr "Maktab turi"
+
+#: .\frontend\index.html:244
+msgid "Общеобразовательная школа"
+msgstr "Umumta'lim maktabi"
+
+#: .\frontend\index.html:251 .\frontend\maktab\maktab-jamoasi.html:121
+msgid "Телефон"
+msgstr "Telefon"
+
+#: .\frontend\index.html:259
+msgid "Юридический адрес"
+msgstr "Yuridik manzil"
+
+#: .\frontend\index.html:268
+msgid "Электронный адрес"
+msgstr "Elektron manzil"
+
+#: .\frontend\maktab\maktab-direktori.html:117
+msgid "Трудовая деятельность"
+msgstr "Mehnat faoliyati"
+
+#: .\frontend\maktab\qabul-kunlari.html:117
+#, fuzzy
+#| msgid "Дни приема"
+msgid "Дни недели"
+msgstr "Qabul kunlari"
+
+#: .\frontend\maktab\qabul-kunlari.html:120
+#, fuzzy
+#| msgid "Дни приема"
+msgid "Время приема"
+msgstr "Qabul kunlari"
+
+#: .\frontend\maktab\qabul-kunlari.html:123
+msgid "Время обеда"
+msgstr "Tushlik vaqti"
+
+#: .\frontend\oqituvchilarga\maktab-jamoasi.html:121
+#: .\frontend\oquvchilarga\togaraklar-jadvali.html:125
+msgid "Класс"
+msgstr "Sinf"
+
+#: .\frontend\oquvchilarga\imtihon-materiallari.html:99
+msgid ""
+"перечень предметов, по которым в течение учебного года проводятся итоговые "
+"контрольные экзамены учащихся, и формы проведения экзаменов"
+msgstr ""
+"o`quv yilida o`quvchilarning yakuniy nazorat imtihonlari o‘tkaziladigan fanlarning ro‘yxati va imtihon o‘tkazish shakllari"
+
+#: .\frontend\oquvchilarga\qongiroqlar-jadvali.html:114
+#: .\frontend\oquvchilarga\qongiroqlar-jadvali.html:120
+#, fuzzy
+#| msgid "Дни приема"
+msgid "Время уроков"
+msgstr "Dars vaqti"
+
+#: .\frontend\oquvchilarga\qongiroqlar-jadvali.html:114
+#: .\frontend\oquvchilarga\qongiroqlar-jadvali.html:120
+msgid "Перемена"
+msgstr "Tanaffus"
+
+#: .\frontend\oquvchilarga\qongiroqlar-jadvali.html:117
+#: .\frontend\oquvchilarga\qongiroqlar-jadvali.html:123
+msgid "минут"
+msgstr "minut"
+
+#: .\frontend\oquvchilarga\togaraklar-jadvali.html:100
+msgid " график работы кружков на учебный год"
+msgstr "o‘quv yili uchun to‘garaklar ish faoliyati jadvali
+"
+
+#: .\frontend\oquvchilarga\togaraklar-jadvali.html:114
+#, fuzzy
+#| msgid "Расписание кружков"
+msgid "Предметные кружки"
+msgstr "Fan to‘garaklari "
+
+#: .\frontend\oquvchilarga\togaraklar-jadvali.html:114
+#, fuzzy
+#| msgid "Нормативные документы"
+msgid "Спортивные кружки"
+msgstr "Sport to‘garaklari"
+
+#: .\frontend\oquvchilarga\togaraklar-jadvali.html:114
+msgid "Кружки по увлечению"
+msgstr "Qiziqishlar bo‘yicha to‘garaklar"
+
+#: .\frontend\oquvchilarga\togaraklar-jadvali.html:114
+#, fuzzy
+#| msgid "Кружки"
+msgid "Все кружки"
+msgstr "Barcha to'garaklar"
+
+#: .\frontend\oquvchilarga\togaraklar-jadvali.html:122
+#, fuzzy
+#| msgid "Расписание кружков"
+msgid "Название кружка"
+msgstr "Nomi"
+
+#: .\frontend\oquvchilarga\togaraklar-jadvali.html:128
+msgid "Количество"
+msgstr "O'quvchi"
+
+#: .\frontend\oquvchilarga\togaraklar-jadvali.html:129
+#, fuzzy
+#| msgid "Ученикам"
+msgid "учеников"
+msgstr "lar soni"
+
+#: .\frontend\oquvchilarga\togaraklar-jadvali.html:132
+msgid "День"
+msgstr "Kuni"
+
+#: .\frontend\oquvchilarga\togaraklar-jadvali.html:134
+#, fuzzy
+#| msgid "Время обеда"
+msgid "Время"
+msgstr "Tushlik vaqti"
+
+#: .\frontend\oquvchilarga\togaraklar-jadvali.html:135
+#, fuzzy
+#| msgid "Учителям"
+msgid "Ф.И.О учителя"
+msgstr "O'qituvchilarga"
+
+#, fuzzy
+#~| msgid ""
+#~| "Сурхандарьинская область Денауский район город Денау махалля Суфи Оллаёр "
+#~| "улица М.Барака"
+#~ msgid ""
+#~ "Сурхандарьинская область Денауский район город Денау махалля Суфи Оллаёр "
+#~ "улица М. Барака"
+#~ msgstr ""
+#~ "Surxondaryo viloyati Denov tumani Denov shahar, Sufi Ollayor MFY M.Baraka "
+#~ "ko'chasi"
+
+#, fuzzy
+#~| msgid "Сурхандарьинская область Денауский район школа №74"
+#~ msgid "Сурхандарьинская  область Денауский район школа №74"
+#~ msgstr "Surxondaryo viloyati Denov tumani 74-maktab"

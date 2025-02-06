@@ -1,0 +1,27 @@
+from django.contrib import admin
+from .models import *
+
+# Register your models here.
+admin.site.register(Post)
+admin.site.register(Category)
+admin.site.register(Teacher)
+admin.site.register(Administrators)
+admin.site.register(Principal)
+admin.site.register(Lavozim_Majburiyatlari)
+admin.site.register(Yil_Dasturi)
+admin.site.register(Flag)
+admin.site.register(Gerb)
+admin.site.register(Gimn)
+admin.site.register(Xalq_Talim)
+admin.site.register(Prezident_Qarori)
+admin.site.register(Davlat_Dasturlari)
+admin.site.register(Photo)
+admin.site.register(Announcement)
+admin.site.register(Tugaraklar)
+admin.site.register(Imtihon_Materiallari)
+admin.site.register(Qongiroqlar_Jadvali)
+admin.site.register(Ish)
+admin.site.register(Qubul_Kunlari)
+admin.site.register(Maktab_Madhiyasi)
+admin.site.register(Maktab_Nizomi)
+admin.site.register(Tarkibiy_Tuzilma)

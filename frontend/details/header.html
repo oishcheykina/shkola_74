@@ -1,0 +1,263 @@
+{% load static %}
+{% load i18n %}
+
+<div class="header">
+    <div class="container">
+        <div style="float: right;">{% trans 'Последнее обновление данных' %}: 14-январь 2025, 15:35
+        </div>
+        <img src="/static/images/bosh_sahifa.png" style="vertical-align: -5px;width: 20px;"> &nbsp;<a
+            class="head_link" href="{% url 'home' %}">{% trans 'Главная' %}</a>
+        <img src="/static/images/iphone.png" style="vertical-align: -2px;"> &nbsp;<a class="head_link"
+            href="{% url 'home' %}">{% trans 'Мобильная версия' %}</a>
+    </div>
+</div>
+<div class="header-nets-block">
+    <a href="https://t.me/shkola74Denau" class="__tg"><img src="/static/images/tg.png" alt=""></a>
+    <a href="https://www.facebook.com/share/g/1AAaE4QjWQ/" class="__f"><img src="/static/images/f.png"
+            alt=""></a>
+    <a href="https://www.instagram.com/denau_shkola74/" class="__i"><img
+            src="/static/images/i.png" alt=""></a>
+    <a href="https://www.youtube.com/@denov74maktab" class="__y"><img src="/static/images/y.png"
+            alt=""></a>
+</div>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6" id="logo">
+                <a href="/"><img src="{% static 'images/17.png' %}" alt="Logo" style="width: 350px;"></a>
+            </div>
+        
+            <div class="col-md-6 col-sm-6">
+                <div id="phone" class="hidden-xs"><strong> +998(93)639-91-74 </strong>{% trans 'Горячая линия' %}</div>
+                <div id="izlash" class="hidden-xs">
+                    <div class="search-container">
+                        <form id="q_search" method="post" class="active">
+                            <input  id="title-search-input" type="text" name="story" value="" autocomplete="off" placeholder="{% trans 'Поиск данных по сайту' %}">
+                            <button id="mm-submit" name="s" type="submit">🔍</button>
+                            <input type="hidden" name="do" value="search">
+                            <input type="hidden" name="subaction" value="search">
+                        </form>
+                    </div>
+                </div>
+        
+                <!-- Bayroq rasmlari -->
+                <div id="languages" style="margin-top: 20px; text-align: right; margin-right: 45px;">
+                    <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name="language" value="uz">
+                        <button type="submit" style="border: none; background: none; cursor: pointer;">
+                            <img src="{% static 'images/uzbekiston.png' %}" alt="O'zbek" style="width: 30px; margin-right: 10px;">
+                        </button>
+                    </form>
+                    <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name="language" value="ru">
+                        <button type="submit" style="border: none; background: none; cursor: pointer;">
+                            <img src="{% static 'images/rus.png' %}" alt="Русский" style="width: 30px;">
+                        </button>
+                    </form>
+                </div>                    
+            </div>
+        </div>
+        
+          
+            <style>
+                select {
+                    position: absolute;
+                    transform: translate(-50%-50%);
+                    top: 50%;
+                    left: 50%;
+                    -webkit-appearance:none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    width: 80px;
+                    padding: 5px 20px;
+                    font-family: 'Popins',sans-serif;
+                    font-weight: 1200;
+                    font-size: 20px;
+                    letter-spacing: 0.5px;
+                    cursor: pointer;
+                    background-color: rgba(65, 65, 184, 0.951);
+                    color: #ffffff;
+                    border: 5px solid rgb(135, 135, 227);
+                    border-radius: 10px;
+                    background-position: 247px 0;
+                    outline: none;
+                    box-shadow: 0 0 20px rgba(20,20,30,0.25);
+                    margin-left: 540px;
+                    margin-top: -230px;
+
+                }
+                select::-ms-expand {
+                    display: none;
+                }
+                select:hover {
+                    border: 5px solid rgb(65, 65, 184, 0.951);
+                }
+                select option {
+                    letter-spacing: 1.2px;
+                    background-color: rgba(54, 95, 183, 0.951);
+                    font-weight: 400;
+                    font-size: 18px;
+                    border-radius: 10px;
+                }
+
+
+            </style>
+        </div><!-- End row-->
+    </div><!-- End container-->
+</header><!-- End Header-->
+
+<nav style="background-color: #0736e0cf;">
+    <div class="megamenu_container">
+        <a id="megamenu-button-mobile" href="#">{% trans 'Меню' %}</a>
+        <ul class="megamenu">
+            <li class="drop-normal"><a class="drop-down" href="#">{% trans 'Школа' %}<span class="caret"></span></a>
+                <div class="drop-down-container normal">
+                    <ul>
+                        <li class="drop-normal"><a class="drop-down" href="{% url 'principal' %}">{% trans 'Директор школы' %}</a>
+                        </li>
+                        <li class="drop-normal"><a class="drop-down" href="{% url 'school_team' %}">{% trans 'Администрация школы' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'lavozim_majburiyatlari' %}">{% trans 'Должностные обязанности' %}
+                            </a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down" href="{% url 'tarkibiy_tuzilma' %}">{% trans 'Структурная организация' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down" href="{% url 'maktab_nizomi' %}">{% trans 'Устав школы' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down" href="{% url 'maktab_madhiyasi' %}">{% trans 'Гимн школы' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down" href="{% url 'qabul_kunlari' %}">{% trans 'Дни приема' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'ish' %}">{% trans 'Свободные вакансии' %}</a>
+
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drop-normal"><a class="drop-down" href="#">{% trans 'Учителям' %}<span
+                        class="caret"></span></a>
+                <div class="drop-down-container normal">
+                    <ul>
+                        <li class="drop-normal"><a class="drop-down" href="{% url 'maktab_faxri' %}">{% trans 'Гордость школы' %} </a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down" href="#">{% trans 'Разработки открытых уроков' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down" href="https://info-master.uz/">{% trans 'Тесты по предметам' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down" href="#">{% trans 'Профсоюз' %}</a>
+
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drop-normal"><a class="drop-down" href="#">{% trans 'Ученикам' %}<span class="caret"></span></a>
+                <div class="drop-down-container normal">
+                    <ul>
+                        <li class="drop-normal"><a class="drop-down" href="https://login.emaktab.uz/">{% trans 'Расписание уроков' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'qongiroqlar' %}">{% trans 'Расписание звонков' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'imtihon_materiallari' %}">{% trans 'Экзаминационные материалы' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'togaraklar' %}">{% trans 'Расписание кружков' %}</a>
+
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drop-normal"><a class="drop-down" href="#">{% trans 'Родителям' %}
+                    <span class="caret"></span></a>
+                <div class="drop-down-container normal">
+                    <ul>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'huquq' %}">{% trans 'Права и обязанности' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'oquvchilarni_qabul_qilish' %}">{% trans 'Принятие учеников в школу' %}</a>
+
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drop-normal"><a class="drop-down" href="#">{% trans 'Пресс-служба' %}<span class="caret"></span></a>
+                <div class="drop-down-container normal">
+                    <ul>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'news' %}">{% trans 'Нововсти' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'announcements' %}">{% trans 'Объявления' %}
+                            </a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'foto_galery' %}">{% trans 'Фотогалерея' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down" href="https://www.youtube.com/@denov74maktab">{% trans 'Видеогалерея' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'davlat_dasturlari' %}">{% trans 'Государственные программы' %}
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drop-normal"><a class="drop-down" href="#">{% trans 'Нормативные документы' %}<span class="caret"></span></a>
+                <div class="drop-down-container normal">
+                    <ul>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'prezident_qarori' %}">{% trans 'Указы, распоряжения и Постановления Президента' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'halq_talim' %}">{% trans 'Решения Коллегии Министерства народного образования' %}</a>
+
+                        </li>
+                        <li class="drop-normal"><a class="drop-down" href="#">{% trans 'Нормативные документы департамента народного образования денауского района' %}</a>
+
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drop-normal"><a class="drop-down" href="#">{% trans 'Государственные символы' %}<span class="caret"></span></a>
+                <div class="drop-down-container normal">
+                    <ul>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'gerb' %}">{% trans 'Герб Республики Узбекистан' %}</a>
+                        </li>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'flag' %}">{% trans 'Флаг Республики Узбекистан' %}</a>
+                        </li>
+                        <li class="drop-normal"><a class="drop-down"
+                                href="{% url 'gimn' %}">{% trans 'Гимн Республики Узбекистан' %}</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>  
+    </div>
+</nav>
