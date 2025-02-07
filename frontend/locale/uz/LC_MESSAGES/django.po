@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 13:29+0500\n"
+"POT-Creation-Date: 2025-02-07 22:35+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\frontend\davlat-ramzlari\ozbekiston-respublikasi-davlat-bayrogi.html:100
+#: .\frontend\details\header.html:253
+msgid "Флаг Республики Узбекистан"
+msgstr "O‘zbekiston Respublikasi Davlat bayrog‘i"
+
+#: .\frontend\davlat-ramzlari\ozbekiston-respublikasi-davlat-bayrogi.html:104
+#: .\frontend\davlat-ramzlari\ozbekiston-respublikasi-davlat-gerbi.html:105
+#: .\frontend\davlat-ramzlari\ozbekiston-respublikasi-davlat-madhiyasi.html:104
+#: .\frontend\details\header.html:9
+#: .\frontend\maktab\bosh-ish-orinlari.html:104
+#: .\frontend\maktab\lavozim-majburiyatlari.html:104
+#: .\frontend\maktab\maktab-direktori.html:104
+#: .\frontend\maktab\maktab-jamoasi.html:104
+#: .\frontend\maktab\maktab-madhiyasi.html:103
+#: .\frontend\maktab\maktab-nizomi.html:104
+#: .\frontend\maktab\qabul-kunlari.html:103
+#: .\frontend\maktab\tarkibiy-tuzilma.html:103
+#: .\frontend\normativ-hujjatlar\prezident-qarori-va-farmonlari.html:104
+#: .\frontend\normativ-hujjatlar\xalq-talimi-vazirligi-hayat-qarorlari.html:105
+#: .\frontend\oqituvchilarga\maktab-jamoasi.html:104
+#: .\frontend\oquvchilarga\imtihon-materiallari.html:103
+#: .\frontend\oquvchilarga\qongiroqlar-jadvali.html:104
+#: .\frontend\oquvchilarga\togaraklar-jadvali.html:104
+#: .\frontend\ota-onalarga\huquq-va-majburiyatlar.html:104
+#: .\frontend\ota-onalarga\maktab-oquvchilarni-qabul-qilish.html:105
+msgid "Главная"
+msgstr "Bosh sahifa"
+
+#: .\frontend\davlat-ramzlari\ozbekiston-respublikasi-davlat-gerbi.html:101
+#: .\frontend\details\header.html:250
+msgid "Герб Республики Узбекистан"
+msgstr "O‘zbekiston Respublikasi Davlat gerbi"
+
+#: .\frontend\davlat-ramzlari\ozbekiston-respublikasi-davlat-madhiyasi.html:100
+#: .\frontend\details\header.html:256
+msgid "Гимн Республики Узбекистан"
+msgstr "O‘zbekiston Respublikasi Davlat madhiyasi"
 
 #: .\frontend\details\footer.html:12
 msgid "Все права защищены в рамках действующего законодательства."
@@ -52,22 +90,6 @@ msgstr "Obuna bo'lish"
 #: .\frontend\details\header.html:6
 msgid "Последнее обновление данных"
 msgstr "Ma'lumotlarning so'nggi yangilanishi"
-
-#: .\frontend\details\header.html:9
-#: .\frontend\maktab\bosh-ish-orinlari.html:104
-#: .\frontend\maktab\lavozim-majburiyatlari.html:104
-#: .\frontend\maktab\maktab-direktori.html:104
-#: .\frontend\maktab\maktab-jamoasi.html:104
-#: .\frontend\maktab\maktab-madhiyasi.html:103
-#: .\frontend\maktab\maktab-nizomi.html:104
-#: .\frontend\maktab\qabul-kunlari.html:103
-#: .\frontend\maktab\tarkibiy-tuzilma.html:103
-#: .\frontend\oqituvchilarga\maktab-jamoasi.html:104
-#: .\frontend\oquvchilarga\imtihon-materiallari.html:103
-#: .\frontend\oquvchilarga\qongiroqlar-jadvali.html:104
-#: .\frontend\oquvchilarga\togaraklar-jadvali.html:104
-msgid "Главная"
-msgstr "Bosh sahifa"
 
 #: .\frontend\details\header.html:11
 msgid "Мобильная версия"
@@ -219,6 +241,7 @@ msgid "Указы, распоряжения и Постановления Пре
 msgstr "Prezident farmonlari, qarorlari va farmoyishlari"
 
 #: .\frontend\details\header.html:237
+#: .\frontend\normativ-hujjatlar\xalq-talimi-vazirligi-hayat-qarorlari.html:101
 msgid "Решения Коллегии Министерства народного образования"
 msgstr "Xalq ta’limi vazirligi hay’ati qarorlari"
 
@@ -230,18 +253,6 @@ msgstr "Denov tumani xalq ta’limi bo‘limining normativ hujjatlari"
 #: .\frontend\details\header.html:246
 msgid "Государственные символы"
 msgstr "Davlat ramzlari"
-
-#: .\frontend\details\header.html:250
-msgid "Герб Республики Узбекистан"
-msgstr "O‘zbekiston Respublikasi Davlat gerbi"
-
-#: .\frontend\details\header.html:253
-msgid "Флаг Республики Узбекистан"
-msgstr "O‘zbekiston Respublikasi Davlat bayrog‘i"
-
-#: .\frontend\details\header.html:256
-msgid "Гимн Республики Узбекистан"
-msgstr "O‘zbekiston Respublikasi Davlat madhiyasi"
 
 #: .\frontend\details\leftcolumn.html:65
 msgid "Вы можете посмотреть фотографии в фотогалерее"
@@ -312,19 +323,28 @@ msgstr ""
 "Maktabimiz madhiyasi — bu bizning baxtimiz, g'ururimizdir. U bizni unutmagan "
 "holda g'ururimizni ta'kidlaydi!"
 
-#: .\frontend\index.html:140 .\frontend\matbuot-xizmati\foto-galereya.html:69
-#: .\frontend\matbuot-xizmati\yangiliklar.html:69
+#: .\frontend\index.html:140 .\frontend\matbuot-xizmati\yangiliklar.html:69
 msgid "Новости"
 msgstr "Yangiliklar"
 
-#: .\frontend\index.html:161 .\frontend\matbuot-xizmati\foto-galereya.html:90
+#: .\frontend\index.html:161
+#: .\frontend\matbuot-xizmati\davlat-dasturlari.html:87
+#: .\frontend\matbuot-xizmati\davlat_dasturi.html:86
+#: .\frontend\matbuot-xizmati\elonlar.html:86
+#: .\frontend\matbuot-xizmati\foto-galereya.html:88
 #: .\frontend\matbuot-xizmati\yangiliklar.html:90
 msgid "Подробно"
 msgstr "Batafsil"
 
 #: .\frontend\index.html:175 .\frontend\index.html:177
-#: .\frontend\matbuot-xizmati\foto-galereya.html:104
-#: .\frontend\matbuot-xizmati\foto-galereya.html:106
+#: .\frontend\matbuot-xizmati\davlat-dasturlari.html:101
+#: .\frontend\matbuot-xizmati\davlat-dasturlari.html:103
+#: .\frontend\matbuot-xizmati\davlat_dasturi.html:100
+#: .\frontend\matbuot-xizmati\davlat_dasturi.html:102
+#: .\frontend\matbuot-xizmati\elonlar.html:100
+#: .\frontend\matbuot-xizmati\elonlar.html:102
+#: .\frontend\matbuot-xizmati\foto-galereya.html:103
+#: .\frontend\matbuot-xizmati\foto-galereya.html:105
 #: .\frontend\matbuot-xizmati\yangiliklar.html:104
 #: .\frontend\matbuot-xizmati\yangiliklar.html:106
 #: .\frontend\oqituvchilarga\maktab-jamoasi.html:131
@@ -333,8 +353,14 @@ msgid "Предыдущая"
 msgstr "Oldingi"
 
 #: .\frontend\index.html:211 .\frontend\index.html:213
-#: .\frontend\matbuot-xizmati\foto-galereya.html:140
-#: .\frontend\matbuot-xizmati\foto-galereya.html:142
+#: .\frontend\matbuot-xizmati\davlat-dasturlari.html:137
+#: .\frontend\matbuot-xizmati\davlat-dasturlari.html:139
+#: .\frontend\matbuot-xizmati\davlat_dasturi.html:136
+#: .\frontend\matbuot-xizmati\davlat_dasturi.html:138
+#: .\frontend\matbuot-xizmati\elonlar.html:136
+#: .\frontend\matbuot-xizmati\elonlar.html:138
+#: .\frontend\matbuot-xizmati\foto-galereya.html:139
+#: .\frontend\matbuot-xizmati\foto-galereya.html:141
 #: .\frontend\matbuot-xizmati\yangiliklar.html:140
 #: .\frontend\matbuot-xizmati\yangiliklar.html:142
 #: .\frontend\oqituvchilarga\maktab-jamoasi.html:167
@@ -384,6 +410,12 @@ msgstr "Qabul kunlari"
 msgid "Время обеда"
 msgstr "Tushlik vaqti"
 
+#: .\frontend\normativ-hujjatlar\prezident-qarori-va-farmonlari.html:100
+#, fuzzy
+#| msgid "Указы, распоряжения и Постановления Президента"
+msgid "Указы, распоряжения и постановления президента"
+msgstr "Prezident farmonlari, qarorlari va farmoyishlari"
+
 #: .\frontend\oqituvchilarga\maktab-jamoasi.html:121
 #: .\frontend\oquvchilarga\togaraklar-jadvali.html:125
 msgid "Класс"
@@ -394,7 +426,8 @@ msgid ""
 "перечень предметов, по которым в течение учебного года проводятся итоговые "
 "контрольные экзамены учащихся, и формы проведения экзаменов"
 msgstr ""
-"o`quv yilida o`quvchilarning yakuniy nazorat imtihonlari o‘tkaziladigan fanlarning ro‘yxati va imtihon o‘tkazish shakllari"
+"o`quv yilida o`quvchilarning yakuniy nazorat imtihonlari o‘tkaziladigan "
+"fanlarning ro‘yxati va imtihon o‘tkazish shakllari"
 
 #: .\frontend\oquvchilarga\qongiroqlar-jadvali.html:114
 #: .\frontend\oquvchilarga\qongiroqlar-jadvali.html:120
@@ -415,8 +448,7 @@ msgstr "minut"
 
 #: .\frontend\oquvchilarga\togaraklar-jadvali.html:100
 msgid " график работы кружков на учебный год"
-msgstr "o‘quv yili uchun to‘garaklar ish faoliyati jadvali
-"
+msgstr "o‘quv yili uchun to‘garaklar ish faoliyati jadvali"
 
 #: .\frontend\oquvchilarga\togaraklar-jadvali.html:114
 #, fuzzy
@@ -471,6 +503,22 @@ msgstr "Tushlik vaqti"
 #| msgid "Учителям"
 msgid "Ф.И.О учителя"
 msgstr "O'qituvchilarga"
+
+#: .\frontend\ota-onalarga\huquq-va-majburiyatlar.html:100
+#, fuzzy
+#| msgid "Права и обязанности"
+msgid "Права и обязанности родителей"
+msgstr "Ota - onalarning huquq va majburiyatlari"
+
+#: .\frontend\ota-onalarga\maktab-oquvchilarni-qabul-qilish.html:101
+#: .\frontend\ota-onalarga\maktab-oquvchilarni-qabul-qilish.html:118
+msgid "Порядок принятия на учебу в общеобразовательных учреждениях"
+msgstr "Umumta’lim muassasasiga o‘qishga qabul qilish tartibi"
+
+#, fuzzy
+#~| msgid "Решения Коллегии Министерства народного образования"
+#~ msgid "Решения коллегии министерства народного образования"
+#~ msgstr "Xalq ta'limi vazirligi hay'ati qarorlari"
 
 #, fuzzy
 #~| msgid ""

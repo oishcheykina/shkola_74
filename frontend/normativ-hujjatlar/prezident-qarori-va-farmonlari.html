@@ -97,13 +97,11 @@
                         }
                     </style>
                     <h2 class="entry-title">
-                        <h3 rel="bookmark">Prezident Farmonlari, Farmoiyishlari va Qarorlari</h3>
+                        <h3 rel="bookmark">{% trans 'Указы, распоряжения и постановления президента' %}</h3>
                     </h2>
                     <div class="entry-meta">
-                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">6-04-2022,
-                                12:28</span></span>
-                        <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh
-                                sahifa</a> / ---</span>
+                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ prezident_qarori.date|date:"j-m-Y, H:i" }}</span></span>
+                        <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">{% trans 'Главная' %}</a> / ---</span>
                     </div>
 
                     <div class="row">
@@ -115,7 +113,7 @@
                                 <p>
                                 <div style="text-align:center;"><a href="https://lex.uz/uz/"
                                         rel="external noopener noreferrer"><img
-                                            src="/uploads/posts/2022-04/1649229956_qip-shot-screen-240.png"
+                                            src="{{ prezident_qarori.image.url }}"
                                             class="fr-fic fr-dib" alt="" style="width:915px;"></a></div>
                                 </p>
 

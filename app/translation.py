@@ -49,3 +49,27 @@ class PrincipalTranslationOptions(TranslationOptions):
 @register(Tugaraklar)
 class TugaraklarTranslationOptions(TranslationOptions):
     fields = ('title', 'grade', 'days', 'teacher',)
+    
+@register(Huquq_Majburiyatlar)
+class Huquq_MajburiyatlarTranslationOptions(TranslationOptions):
+    fields = ('title', 'content',)
+    
+@register(Oquvchilarni_Qabul_Qilish)
+class Oquvchilarni_Qabul_QilishTranslationOptions(TranslationOptions):
+    fields = ('title', 'content',)
+    
+@register(Xalq_Talim)
+class Xalq_TalimTranslationOptions(TranslationOptions):
+    fields = ('title', 'content',)
+    
+@register(Gerb)
+class GerbTranslationOptions(TranslationOptions):
+    fields = ('content',)
+    
+@register(Gimn)
+class GimnTranslationOptions(TranslationOptions):
+    fields = ('content',)
+    
+@register(Flag)
+class FlagTranslationOptions(TranslationOptions):
+    fields = ('content',)

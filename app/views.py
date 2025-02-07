@@ -192,18 +192,22 @@ def togaraklar_jadvali(request):
 def huquq(request):
     admins = Administrators.objects.all()
     yil_dasturi = Yil_Dasturi.objects.first()
+    huquq_majburiyatlar = Huquq_Majburiyatlar.objects.first()
     dic = {
         'admins': admins,
         'yil_dasturi': yil_dasturi,
+        'huquq_majburiyatlar': huquq_majburiyatlar,
     }
     return render(request, 'ota-onalarga/huquq-va-majburiyatlar.html', dic)
 
 def oquvchilarni_qabul_qilish(request):
     admins = Administrators.objects.all()
     yil_dasturi = Yil_Dasturi.objects.first()
+    oquvchilarni_qabul_qilishh = Oquvchilarni_Qabul_Qilish.objects.first()
     dic = {
         'admins': admins,
         'yil_dasturi': yil_dasturi,
+        'oquvchilarni_qabul_qilishh': oquvchilarni_qabul_qilishh,
     }
     return render(request, 'ota-onalarga/maktab-oquvchilarni-qabul-qilish.html', dic)
 
@@ -372,5 +376,3 @@ def maktab_faxri(request):
         'teacherr': teacherr,
     }
     return render(request, 'oqituvchilarga/maktab-jamoasi.html', dic)
-
-

@@ -98,13 +98,11 @@
                         }
                     </style>
                     <h2 class="entry-title">
-                        <h3 rel="bookmark">Xalq ta’limi vazirligi hay’at qarorlari</h3>
+                        <h3 rel="bookmark">{% trans 'Решения Коллегии Министерства народного образования' %}</h3>
                     </h2>
                     <div class="entry-meta">
-                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">11-04-2022,
-                                11:07</span></span>
-                        <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh
-                                sahifa</a> / ---</span>
+                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ halq_talim.date|date:"j-m-Y, H:i" }}</span></span>
+                        <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">{% trans 'Главная' %}</a> / ---</span>
                     </div>
 
                     <div class="row">
@@ -114,39 +112,8 @@
 
 
                                 <p>
-                                <div style="text-align:justify;">Xalq ta’limi vazirligining 2021 yil birinchi yarim
-                                    yilligiga mo‘ljallangan ish rejasi va 2020 yilda jismoniy va yuridik shaxslarning
-                                    murojaatlari bilan ishlash samaradorligi to‘g‘risida.<span class="attachment"><a
-                                            href="https://17-maktab.uz/index.php?do=download&id=38"><b>Yuklab
-                                                olish</b></a> [2,58 Mb]</span>
-                                </div>
-                                <div style="text-align:justify;"><br></div>
-                                <div style="text-align:justify;">Xalq ta’limi vazirligida Vazirlar Mahkamasining 2021
-                                    yil 27 apreldagi 51-son bayoni muhokamasi va ijro intizomi holati to‘g‘risida.<span
-                                        class="attachment"><a
-                                            href="https://17-maktab.uz/index.php?do=download&id=39"><b>Yuklab
-                                                olish</b></a> [1,94 Mb]</span>
-                                </div>
-                                <div style="text-align:justify;"><br></div>
-                                <div style="text-align:justify;">A.Avloniy nomidagi xalq ta’limi muammolarini o‘rganish
-                                    va istiqbollarini belgilash ilmiy-tadqiqot institutidagi doktorantura faoliyatini
-                                    tashkil etish to‘g‘risida.<span class="attachment"><a
-                                            href="https://17-maktab.uz/index.php?do=download&id=40"><b>Yuklab
-                                                olish</b></a> [1,59 Mb]</span>
-                                </div>
-                                <div style="text-align:justify;"><br></div>
-                                <div style="text-align:justify;">Xalq ta’limi vazirligining 2021 yil ikkinchi yarim
-                                    yilligiga mo‘ljallangan ish rejasini tasdiqlash to‘g‘risida.<span
-                                        class="attachment"><a
-                                            href="https://17-maktab.uz/index.php?do=download&id=41"><b>Yuklab
-                                                olish</b></a> [1,37 Mb]</span>
-                                </div>
-                                <div style="text-align:justify;"><br></div>
-                                <div style="text-align:justify;">Xalq ta’limi tizimiga ajratilayotgan byudjet
-                                    mablag‘larinining to‘g‘ri sarflanishi va xatoliklarni oldini olish masalalari
-                                    to‘g‘risida.<span class="attachment"><a
-                                            href="https://17-maktab.uz/index.php?do=download&id=42"><b>Yuklab
-                                                olish</b></a> [2,02 Mb]</span>
+                                <div style="text-align:justify;">
+                                    {{ halq_talim.content|linebreaks }}
                                 </div>
                                 </p>
 

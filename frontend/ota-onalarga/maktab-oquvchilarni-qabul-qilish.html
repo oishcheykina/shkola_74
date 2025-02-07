@@ -1,3 +1,6 @@
+{% load static %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en" class=" js no-touch csstransforms csstransitions">
 
@@ -95,13 +98,11 @@
                         }
                     </style>
                     <h2 class="entry-title">
-                        <h3 rel="bookmark">Umumta’lim muassasasiga o‘qishga qabul qilish tartibi</h3>
+                        <h3 rel="bookmark">{% trans 'Порядок принятия на учебу в общеобразовательных учреждениях' %}</h3>
                     </h2>
                     <div class="entry-meta">
-                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">1-06-2023,
-                                17:38</span></span>
-                        <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh
-                                sahifa</a> / ---</span>
+                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ oquvchilarni_qabul_qilishh.date|date:"j-m-Y, H:i" }}</span></span>
+                        <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">{% trans 'Главная' %}</a> / ---</span>
                     </div>
 
                     <div class="row">
@@ -114,30 +115,11 @@
                                 <div style="text-align:center;"><img
                                         src="http://5-school.uz/uploads/posts/2022-04/1651064872_qip-shot-screen-282.png"
                                         alt="" class="fr-fic fr-dii"> <a href="https://my.maktab.uz/"
-                                        rel="external noopener noreferrer"><b>Umumta’lim maktablariga o‘quvchilarni
-                                            onlayn qabul qilish</b></a></div>
+                                        rel="external noopener noreferrer"><b>{% trans 'Порядок принятия на учебу в общеобразовательных учреждениях' %}</b></a></div>
                                 <div style="text-align:justify;"><br></div>
-                                <div style="text-align:justify;">2023-2024-O‘quv uili uchun 1-sinfga qabul 20-iyundan
-                                    boshlanadi.<br>O‘rnatilgan <a
-                                        href="https://lex.uz/docs/6044094?ONDATE=03.09.2022%2000"
-                                        rel="external noopener noreferrer">tartibga ko‘ra,</a> 1-sinfga qabul
-                                    jarayonlari 2 bosqichda amalga oshiriladi.<br><b>1-BOSQICH:</b> mikro-hudud
-                                    doirasida <br>(20-iyun – 31-iyul) <br><b>2-BOSQICH:</b> mikro-hududdan
-                                    tashqarida<br>(1 - 15-avgust)<br>43 ta tuman (shahar)da 1-sinfga qabul jarayonlari
-                                    elektron shaklda davlat xizmatlari orqali amalga oshiriladi.<br>Bunda,
-                                    ota-onalar <b>20-iyun soat 12-00 dan </b>boshlab <b><u>my.maktab.uz</u></b> elektron
-                                    platformasi orqali ro‘yxatdan o‘tib, ariza topshirishlari mumkin. Qolgan tumanlarda
-                                    an’anaviy shaklda, ya’ni bevosita maktab tomonidan qabul qilinib, 1-sinfga qabul
-                                    qilingan o‘quvchilar vazirlik elektron tizimi <b>(adm.maktab.uz)</b>ga kiritiladi va
-                                    nazorat etib boriladi. <br>Ma’lumot uchun: <b>2023-2024-o‘quv
-                                        yilida </b>respublikamiz bo‘yicha 730 mingdan ortiq bolalar 1-sinfga qabul
-                                    qilinishi rejalashtirilgan.<br><br><b>Muhim eslatma! </b><br>“Ta’lim to‘g‘risida”gi
-                                    Qonunning (9-moddasi)ga asosan bolalar, ular 7 yoshga to‘ladigan yilda maktabga
-                                    qabul qilinadi. 2023 yil 1-sinflarga 2016-yilning 1-yanvaridan 31-dekabriga qadar
-                                    tug‘ilgan bolalar qabul qilinadi. <br>Elektron qabul jarayonlari yuzasidan Vazirlik
-                                    Call-markazining <b>71-203-07-04</b> raqami yoki
-                                    telegramdagi  <b><u>@mymaktab_uz </u></b>rasmiy kanali orqali qo‘shimcha ma’lumot
-                                    olishingiz mumkin. </div>
+                                <div style="text-align:justify;">
+                                    {{ oquvchilarni_qabul_qilishh.content|linebreaks }}
+                                </div>
                                 </p>
 
 

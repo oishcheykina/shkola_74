@@ -97,13 +97,11 @@
                         }
                     </style>
                     <h2 class="entry-title">
-                        <h3 rel="bookmark">O&#039;zbekiston Respublikasi Davlat madhiyasi</h3>
+                        <h3 rel="bookmark">{% trans 'Гимн Республики Узбекистан' %}</h3>
                     </h2>
                     <div class="entry-meta">
-                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">23-06-2022,
-                                15:06</span></span>
-                        <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh
-                                sahifa</a> / ---</span>
+                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ gimn.date|date:"j-m-Y, H:i" }}</span></span>
+                        <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">{% trans 'Главная' %}</a> / ---</span>
                     </div>
 
                     <div class="row">
@@ -113,12 +111,12 @@
 
 
                                 <p>
-                                    <img src="/uploads/posts/2022-06/1655978803_1655715329_1182px-uzbek_anthem_music_sheet_instrumentalsimple_svg.png"
+                                    <img src="{{ gimn.image.url }}"
                                         class="fr-fic fr-dib" alt=""><br><br>
-                                <div style="text-align:justify;">"O'zbekiston Respublikasining davlat madhiyasi
-                                    to'g'risida"gi Qonun 1992 yil 10 dekabrda O'zbekiston Respublikasi Oliy Kengashining
-                                    o'n birinchi sessiyasida qabul qilingan. Mutal Burhonov musiqasi. Abdulla Oripov
-                                    so'zi</div><br>Serquyosh hur o'lkam, elga baxt, najot, <br>Sen o'zing do'stlarga
+                                <div style="text-align:justify;">
+                                    {{ gimn.content|linebreaks }}</div>
+                                    
+                                    <br>Serquyosh hur o'lkam, elga baxt, najot, <br>Sen o'zing do'stlarga
                                 yo'ldosh, mehribon! <br>Yashnagay to abad ilmu fan, ijod, <br>Shuhrating porlasin toki
                                 bor jahon!<br><br><b>Naqarot:</b><br>Oltin bu vodiylar - jon O'zbekiston, <br>Ajdodlar
                                 mardona ruhi senga yor! <br>Ulug' xalq qudrati jo'sh urgan zamon, <br>Olamni mahliyo

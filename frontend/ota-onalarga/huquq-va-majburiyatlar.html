@@ -97,13 +97,11 @@
                         }
                     </style>
                     <h2 class="entry-title">
-                        <h3 rel="bookmark">Ota - onalarning huquq va majburiyatlari</h3>
+                        <h3 rel="bookmark">{% trans 'Права и обязанности родителей' %}</h3>
                     </h2>
                     <div class="entry-meta">
-                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">11-05-2022,
-                                17:34</span></span>
-                        <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh
-                                sahifa</a> / ---</span>
+                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ huquq_majburiyatlar.date|date:"j-m-Y, H:i" }}</span></span>
+                        <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">{% trans 'Главная' %}</a> / ---</span>
                     </div>
 
                     <div class="row">
@@ -113,43 +111,9 @@
 
 
                                 <p>
-                                <div style="text-align:justify;"><b>Bolalarni tarbiyalash va ularga ta’lim berish
-                                        borasidagi majburiyatlarni bajarmaslik</b></div>
-                                <div style="text-align:justify;">Ota-onalar yoki ularning o‘rnini bosuvchi shaxslar
-                                    tomonidan voyaga yetmagan bolalarni tarbiyalash va ularga ta’lim berish borasidagi
-                                    majburiyatlarni bajarmaslik, shu jumladan voyaga yetmagan bolalarning ma’muriy
-                                    huquqbuzarlik sodir etishiga olib kelishi —</div>
-                                <div style="text-align:justify;">eng kam ish haqining ikkidan bir qismidan uch
-                                    baravarigacha miqdorda jarima solishga sabab bo‘ladi.</div>
-                                <div style="text-align:justify;">Bolalarning majburiy umumiy o‘rta ta’lim, o‘rta maxsus,
-                                    kasb-hunar ta’limi olishiga ota-onalar yoki ularning o‘rnini bosuvchi shaxslar
-                                    tomonidan to‘sqinlik qilish —</div>
-                                <div style="text-align:justify;">eng kam ish haqining besh baravaridan o‘n baravarigacha
-                                    miqdorda jarima solishga sabab bo‘ladi.</div>
-                                <div style="text-align:justify;"> </div>
-                                <div style="text-align:justify;"><b>Ota-ona qaramog‘idan mahrum bo‘lgan bolalar
-                                        to‘g‘risidagi ma’lumotlarni vasiylik va homiylik organiga xabar qilmaslik</b>
+                                <div style="text-align:justify;">
+                                    {{ huquq_majburiyatlar.content|linebreaks }}
                                 </div>
-                                <div style="text-align:justify;">Ota-ona qaramog‘idan mahrum bo‘lgan bolalar
-                                    to‘g‘risidagi ma’lumotlarni shunday bolalar turgan muassasa rahbari yoki
-                                    fuqarolarning o‘zini o‘zi boshqarish organi mansabdor shaxsi tomonidan vasiylik va
-                                    homiylik organiga xabar qilmaslik, xuddi shuningdek ular tomonidan ota-ona
-                                    qaramog‘idan mahrum bo‘lgan bolalar haqida atayin noto‘g‘ri ma’lumotlar berish —
-                                </div>
-                                <div style="text-align:justify;">mansabdor shaxsga eng kam ish haqining uch baravaridan
-                                    yetti baravarigacha miqdorda jarima solishga sabab bo‘ladi.</div>
-                                <div style="text-align:justify;"> </div>
-                                <div style="text-align:justify;"><b>Ota-ona qaramog‘idan mahrum bo‘lgan bolalarni
-                                        joylashtirishda qonun hujjatlari talablarini buzish</b></div>
-                                <div style="text-align:justify;">Ota-ona qaramog‘idan mahrum bo‘lgan bolalarni oilaga
-                                    tarbiyaga (patronat), farzandlikka berishda, ularga vasiylik (homiylik) belgilashda
-                                    yoxud ularni yetim bolalar yoki ota-ona qaramog‘idan mahrum bo‘lgan bolalar uchun
-                                    tayinlangan tegishli davlat muassasasiga joylashtirishda qonun hujjatlari
-                                    talablarini buzish —</div>
-                                <div style="text-align:justify;">fuqarolarga eng kam ish haqining ikki baravaridan besh
-                                    baravarigacha, mansabdor shaxslarga esa — uch baravaridan yetti baravarigacha
-                                    miqdorda jarima solishga sabab bo‘ladi.</div>
-                                <div style="text-align:justify;"><br></div>
                                 </p>
 
 
