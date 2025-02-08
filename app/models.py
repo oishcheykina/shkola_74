@@ -10,6 +10,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
     
+    class Meta:
+        verbose_name = 'Категория кружков'
+        verbose_name_plural = 'Категории кружков'
+    
 class Post(models.Model):
     image = models.ImageField(upload_to='post_images/', blank=True, null=True)
     slug = models.SlugField(unique=True)
@@ -23,6 +27,10 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse("more", kwargs={"slug": self.slug})
     
+    class Meta:
+        verbose_name = 'Новость'
+        verbose_name_plural = 'Новости'
+    
     
 class Teacher(models.Model):
     name = models.CharField(max_length=200)
@@ -32,6 +40,10 @@ class Teacher(models.Model):
     date = models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.name
+    
+    class Meta:
+        verbose_name = 'Учитель'
+        verbose_name_plural = 'Учителя'
     
     
 class Lavozim_Majburiyatlari(models.Model):
@@ -43,6 +55,10 @@ class Lavozim_Majburiyatlari(models.Model):
     def __str__(self):
         return self.title
     
+    class Meta:
+        verbose_name = 'Должностные обязанности'
+        verbose_name_plural = 'Должностные обязанности'
+    
 class Tarkibiy_Tuzilma(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
@@ -51,6 +67,10 @@ class Tarkibiy_Tuzilma(models.Model):
     
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name = 'Структурная организация'
+        verbose_name_plural = 'Структурная организация'
     
 class Maktab_Nizomi(models.Model):
     title = models.CharField(max_length=150)
@@ -61,6 +81,10 @@ class Maktab_Nizomi(models.Model):
     def __str__(self):
         return self.title
     
+    class Meta:
+        verbose_name = 'Устав школы'
+        verbose_name_plural = 'Устав школы'
+    
 class Maktab_Madhiyasi(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
@@ -70,6 +94,10 @@ class Maktab_Madhiyasi(models.Model):
     def __str__(self):
         return self.title
     
+    class Meta:
+        verbose_name = 'Гимн школы'
+        verbose_name_plural = 'Гимн школы'
+    
 class Qubul_Kunlari(models.Model):
     date = models.DateTimeField(auto_now=True)
     day = models.CharField(max_length=150)
@@ -77,6 +105,10 @@ class Qubul_Kunlari(models.Model):
     lunch = models.CharField(max_length=150)
     def __str__(self):
         return self.day
+    
+    class Meta:
+        verbose_name = 'Дни приема'
+        verbose_name_plural = 'Дни приема'
     
 class Ish(models.Model):
     date = models.DateTimeField(auto_now=True)
@@ -87,12 +119,20 @@ class Ish(models.Model):
     def __str__(self):
         return self.conclusion
     
+    class Meta:
+        verbose_name = 'Свободные вакансии'
+        verbose_name_plural = 'Свободные вакансии'
+    
 class Yil_Dasturi(models.Model):
     title = models.CharField(max_length=150)
     image = models.ImageField(null=True, blank=True)
     
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name = 'Программа года'
+        verbose_name_plural = 'Программа года'
     
     
 #oquvchilarga
@@ -113,6 +153,10 @@ class Qongiroqlar_Jadvali(models.Model):
 
     def __str__(self):
         return f"{self.get_shift_display()} - Урок {self.lesson_number}: {self.start_time} - {self.end_time}"
+    
+    class Meta:
+        verbose_name = 'Расписание звонков'
+        verbose_name_plural = 'Расписание звонков'
 
     
 class Imtihon_Materiallari(models.Model):
@@ -122,6 +166,10 @@ class Imtihon_Materiallari(models.Model):
     
     def __str__(self):
         return self.year
+    
+    class Meta:
+        verbose_name = 'Экзаминационные материалы'
+        verbose_name_plural = 'Экзаменационные материалы'
     
     
 class Tugaraklar(models.Model):
@@ -138,12 +186,23 @@ class Tugaraklar(models.Model):
     def __str__(self):
         return self.title
     
+    class Meta:
+        verbose_name = 'Кружки'
+        verbose_name_plural = 'Кружки'
+    
     
     
 class Administrators(models.Model):
     name = models.CharField(max_length=200)
     image = models.ImageField(upload_to='admin_photo/')
     field = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = 'Карусель Директор'
+        verbose_name_plural = 'Карусель Директор'
     
 class Principal(models.Model):
     name = models.CharField(max_length=200, null=True)
@@ -156,6 +215,13 @@ class Principal(models.Model):
     field = models.TextField(null=True)
     description = models.TextField(null=True)
     created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = 'Директор'
+        verbose_name_plural = 'Директор'
     
 #matbubot hizmati
 
@@ -172,6 +238,10 @@ class Announcement(models.Model):
     def get_absolute_url(self):
         return reverse("announcement", kwargs={"slug": self.slug})
     
+    class Meta:
+        verbose_name = 'Объявление'
+        verbose_name_plural = 'Объявления'
+    
 class Photo(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='photo_gallery/')
@@ -179,6 +249,10 @@ class Photo(models.Model):
     
     def get_absolute_url(self):
         return reverse("more_photo", kwargs={"photo_id": self.id})
+    
+    class Meta:
+        verbose_name = 'Фото'
+        verbose_name_plural = 'Фото галерея'
     
 class Davlat_Dasturlari(models.Model):
     title = models.CharField(max_length=150)
@@ -192,6 +266,10 @@ class Davlat_Dasturlari(models.Model):
     def get_absolute_url(self):
         return reverse("davlat_dasturi", kwargs={"slug": self.slug})
     
+    class Meta:
+        verbose_name = 'Государственная программа'
+        verbose_name_plural = 'Государственные программы'
+    
 class Prezident_Qarori(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
@@ -201,6 +279,10 @@ class Prezident_Qarori(models.Model):
     def __str__(self):
         return self.title
     
+    class Meta:
+        verbose_name = 'Указ президента'
+        verbose_name_plural = 'Указы президента'
+    
 class Xalq_Talim(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
@@ -209,6 +291,10 @@ class Xalq_Talim(models.Model):
     
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name = 'Министерство образования'
+        verbose_name_plural = 'Министерство образования'
     
 #davlat ramzlari
 
@@ -221,6 +307,10 @@ class Gerb(models.Model):
     def __str__(self):
         return self.title
     
+    class Meta:
+        verbose_name = 'Герб'
+        verbose_name_plural = 'Герб'
+    
 class Gimn(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
@@ -229,6 +319,10 @@ class Gimn(models.Model):
     
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name = 'Гимн'
+        verbose_name_plural = 'Гимн'
     
 class Flag(models.Model):
     title = models.CharField(max_length=150)
@@ -239,14 +333,21 @@ class Flag(models.Model):
     def __str__(self):
         return self.title
     
+    class Meta:
+        verbose_name = 'Флаг'
+        verbose_name_plural = 'Флаг'
+    
 class Activist(models.Model):
     name = models.CharField(max_length=200)
     image = models.ImageField(upload_to='teachers_photo/')
-    field = models.CharField(max_length=300)
     grade = models.CharField(blank= True, null = True, max_length=250)
     date = models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.name
+    
+    class Meta:
+        verbose_name = 'Активист'
+        verbose_name_plural = 'Активисты'
     
 class Huquq_Majburiyatlar(models.Model):
     title = models.CharField(max_length=150)
@@ -256,6 +357,10 @@ class Huquq_Majburiyatlar(models.Model):
     def __str__(self):
         return self.title
     
+    class Meta:
+        verbose_name = 'Права и обязанности'
+        verbose_name_plural = 'Права и обязанности'
+    
 class Oquvchilarni_Qabul_Qilish(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
@@ -263,3 +368,14 @@ class Oquvchilarni_Qabul_Qilish(models.Model):
     
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name = 'Принятие учеников в школу'
+        verbose_name_plural = 'Принятие учеников в школу'
+        
+class Main_Carousel(models.Model):
+    image = models.ImageField(upload_to='carousel_images/')
+    
+    class Meta:
+        verbose_name = 'Главная карусель'
+        verbose_name_plural = 'Главная карусель'

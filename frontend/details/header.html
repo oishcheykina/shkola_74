@@ -3,8 +3,6 @@
 
 <div class="header">
     <div class="container">
-        <div style="float: right;">{% trans 'Последнее обновление данных' %}: 14-январь 2025, 15:35
-        </div>
         <img src="/static/images/bosh_sahifa.png" style="vertical-align: -5px;width: 20px;"> &nbsp;<a
             class="head_link" href="{% url 'home' %}">{% trans 'Главная' %}</a>
         <img src="/static/images/iphone.png" style="vertical-align: -2px;"> &nbsp;<a class="head_link"
@@ -32,10 +30,10 @@
                 <div id="izlash" class="hidden-xs">
                     <div class="search-container">
                         <form id="q_search" method="post" class="active">
-                            <input  id="title-search-input" type="text" name="story" value="" autocomplete="off" placeholder="{% trans 'Поиск данных по сайту' %}">
-                            <button id="mm-submit" name="s" type="submit">🔍</button>
-                            <input type="hidden" name="do" value="search">
-                            <input type="hidden" name="subaction" value="search">
+                            <input  id="title-search-input" type="text" name="story" value="" autocomplete="off" placeholder="{% trans 'Поиск данных по сайту' %}" disabled>
+                            <button id="mm-submit" name="s" type="submit" disabled>🔍</button>
+                            <input type="hidden" name="do" value="search" disabled>
+                            <input type="hidden" name="subaction" value="search" disabled>
                         </form>
                     </div>
                 </div>

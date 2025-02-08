@@ -19,11 +19,13 @@ def home(request):
     paginator = Paginator(posts, 6)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
+    main_carousel = Main_Carousel.objects.all()
     yil_dasturi = Yil_Dasturi.objects.first()
     dic = {
         'admins': admins,
         'page_obj': page_obj,
         'yil_dasturi': yil_dasturi,
+        'main_carousel': main_carousel,
     }
     return render(request, 'index.html', dic)
 

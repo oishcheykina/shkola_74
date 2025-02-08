@@ -73,3 +73,7 @@ class GimnTranslationOptions(TranslationOptions):
 @register(Flag)
 class FlagTranslationOptions(TranslationOptions):
     fields = ('content',)
+    
+@register(Activist)
+class ActivistTranslationOptions(TranslationOptions):
+    fields = ('name',)

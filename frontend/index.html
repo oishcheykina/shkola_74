@@ -66,17 +66,19 @@
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             
             <div class="carousel-inner">
+                {% for carousel in main_carousel %}
+                {% if forloop.first %}
                 <div class="item active">
-                    <img class="defaultimg" src="{% static 'images/1.jpg' %}" style="width: 100%;">
+                    <img class="defaultimg" src="{{ carousel.image.url }}" style="width: 100%;">
                 </div>
+                {% else %}
 
                 <div class="item">
-                    <img class="defaultimg" src="{% static 'images/1.jpg' %}" style="width: 100%;">
+                    <img class="defaultimg" src="{{ carousel.image.url }}" style="width: 100%;">
                 </div>
+                {% endif %}
 
-                <div class="item">
-                    <img class="defaultimg" src="{% static 'images/1.jpg' %}" style="width: 100%;">
-                </div>
+                {% endfor %}
             </div>
 
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">

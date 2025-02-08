@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('vippanel/', admin.site.urls),
 ]
 
 # Используем i18n_patterns для добавления поддержки языков в URL
