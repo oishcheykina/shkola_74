@@ -7,11 +7,13 @@
         <meta charset="utf-8">
         <title>Surxondaryo Viloyati Denov Tumani 74-maktab</title>
         <meta name="description" content="Surxondaryo Viloyati Denov Tumani 74-maktab">
-        <meta name="keywords" content="toshkent shahri, maktab, yunusobod maktab, yunusobot tumani maktab">
+        <meta name="keywords" content="denov tuman, maktab, denov maktab, denov tumani maktab, школа, школа 74, денау, денауский район, денау школа, сурхандарья, surxondaryo, узбекистан, uzbekiston">
         <meta name="generator" content="DataLife Engine (http://dle-news.ru)">
         <link rel="search" type="application/opensearchdescription+xml" href="/"
             title="Surxondaryo Viloyati Denov Tumani 74-maktab">
-        <link rel="canonical" href="/">
+            {% if request.path != '/' %}
+            <meta name="robots" content="noindex, follow">
+            {% endif %}        
         <link rel="alternate" type="application/rss+xml" title="Surxondaryo Viloyati Denov Tumani 74-maktab" href="/">
         <link href="{% static 'css/default.css' %}" rel="stylesheet" type="text/css">
         <script src="{% static 'js/jquery.js' %}"></script>
@@ -99,7 +101,7 @@
 </h2>
 <div class="entry-meta">
     <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ post.created_at|date:"j-m-Y, H:i" }}</span></span>
-    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh sahifa</a> / Yangiliklar</span>
+    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">{% trans 'Главная' %}</a> / {% trans 'Новости' %}</span>
 </div>
 
 <div class="row">
@@ -107,7 +109,7 @@
         <div class="default-content">
             	<p>
                 <img src="{{ post.image.url }}" class="fr-fic fr-dib" alt=""><div style="text-align:justify;"><br></div>
-                <div style="text-align:justify;">{{ post.content }}</div>
+                <div style="text-align:justify;">{{ post.content|safe }}</div>
             	</p>
             </div>
         </div>

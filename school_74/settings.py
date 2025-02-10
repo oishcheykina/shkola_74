@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    'modeltranslation'
+    'modeltranslation',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -147,8 +149,18 @@ JAZZMIN_SETTINGS = {
     "show_ui_builder": True,
 }
 
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'frontend', 'locale'),
 ]
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': '100%',
+    },
+}

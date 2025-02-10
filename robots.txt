@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /vippanel/
+Disallow: /i18n/
+Disallow: /ckeditor/
+Allow: /

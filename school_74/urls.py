@@ -19,9 +19,12 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
+from django.views.static import serve
+from django.urls import re_path
 
 urlpatterns = [
     path('vippanel/', admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 # Используем i18n_patterns для добавления поддержки языков в URL
@@ -30,6 +33,9 @@ urlpatterns += i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
 )
 
+urlpatterns += [
+    re_path(r'^robots\.txt$', serve, {'document_root': '', 'path': 'robots.txt'}),
+]
 
 if settings.DEBUG is False:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

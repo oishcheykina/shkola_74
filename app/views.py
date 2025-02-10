@@ -15,7 +15,7 @@ def custom_page_not_found(request, exception):
 # Create your views here.
 def home(request):
     admins = Administrators.objects.all()
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-created_at')  
     paginator = Paginator(posts, 6)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
@@ -216,7 +216,7 @@ def oquvchilarni_qabul_qilish(request):
 
 def news(request):
     admins = Administrators.objects.all()
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-created_at')
     paginator = Paginator(posts, 6)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
@@ -230,7 +230,7 @@ def news(request):
 
 def announcements(request):
     admins = Administrators.objects.all()
-    announcements = Announcement.objects.all()
+    announcements = Announcement.objects.all().order_by('-created_at')
     paginator = Paginator(announcements, 6)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
@@ -244,7 +244,7 @@ def announcements(request):
 
 def foto_galery(request):
     admins = Administrators.objects.all()
-    photos = Photo.objects.all()
+    photos = Photo.objects.all().order_by('-created_at')
     paginator = Paginator(photos, 6)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
@@ -365,7 +365,7 @@ def flag(request):
         
 def maktab_faxri(request):
     admins = Administrators.objects.all()
-    teachers = Activist.objects.all()
+    teachers = Activist.objects.all().order_by('-date')
     paginator = Paginator(teachers, 6)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)

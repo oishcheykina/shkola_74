@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 #maktab
@@ -15,10 +17,10 @@ class Category(models.Model):
         verbose_name_plural = 'Категории кружков'
     
 class Post(models.Model):
-    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
+    image = models.ImageField(upload_to='post_images/')
     slug = models.SlugField(unique=True)
     title = models.CharField(max_length=200, unique=True)
-    content = models.TextField()
+    content = RichTextUploadingField()
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
@@ -30,6 +32,15 @@ class Post(models.Model):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
+        
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # Сохраняем новый пост
+
+        # Проверяем количество постов
+        if Post.objects.count() > 100:
+            oldest = Post.objects.order_by('created_at').first()  # Самый старый пост
+            if oldest:
+                oldest.delete()
     
     
 class Teacher(models.Model):
@@ -229,7 +240,7 @@ class Announcement(models.Model):
     image = models.ImageField(upload_to='post_images/', blank=True, null=True)
     slug = models.SlugField(unique=True)
     title = models.CharField(max_length=200, unique=True)
-    content = models.TextField()
+    content = RichTextUploadingField()
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
@@ -241,6 +252,15 @@ class Announcement(models.Model):
     class Meta:
         verbose_name = 'Объявление'
         verbose_name_plural = 'Объявления'
+        
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # Сохраняем новый пост
+
+        # Проверяем количество постов
+        if Announcement.objects.count() > 100:
+            oldest = Announcement.objects.order_by('created_at').first()  # Самый старый пост
+            if oldest:
+                oldest.delete()
     
 class Photo(models.Model):
     title = models.CharField(max_length=200)
