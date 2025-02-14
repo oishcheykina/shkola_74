@@ -1571,3 +1571,22 @@ ul.nav1 li a {
 	margin: 0;
 	line-height: 0;
 }
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 56.25%; /* Соотношение 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin: 0 auto; /* Центрирование контейнера */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Убираем границу */
+}

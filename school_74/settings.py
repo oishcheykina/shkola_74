@@ -162,5 +162,8 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'full',
         'height': 300,
         'width': '100%',
+        'extraAllowedContent': 'iframe[*]',  # Разрешаем вставку iframe
+        'removePlugins': 'image',
     },
 }
+

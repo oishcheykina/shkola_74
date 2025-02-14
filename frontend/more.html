@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load youtube_filter %}
 
 <!DOCTYPE html>
 <html lang="en" class=" js no-touch csstransforms csstransitions">
@@ -25,6 +26,8 @@
     
         <!-- Favicons-->
         <link rel="shortcut icon" href="http://www.ansonika.com/edu/img/favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
         <!-- Mobile Specific Metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,8 +112,9 @@
         <div class="default-content">
             	<p>
                 <img src="{{ post.image.url }}" class="fr-fic fr-dib" alt=""><div style="text-align:justify;"><br></div>
-                <div style="text-align:justify;">{{ post.content|safe }}</div>
+                <div style="text-align:justify;">{{ post.content|youtube_iframe|safe }}</div>
             	</p>
+                <div style="text-align:justify;"><i class="fa-regular fa-eye"></i> views: {{ post.views }}</div>
             </div>
         </div>
     </div>

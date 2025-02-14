@@ -44,6 +44,13 @@ def principal(request):
 def more(request, slug):
     admins = Administrators.objects.all()
     post = get_object_or_404(Post, slug=slug)
+    viewed_news = request.session.get('viewed_news', [])
+
+    if slug not in viewed_news:
+        post.views += 1
+        post.save(update_fields=['views'])
+        viewed_news.append(slug)
+        request.session['viewed_news'] = viewed_news
     yil_dasturi = Yil_Dasturi.objects.first()
     dic = {
         'admins': admins,
