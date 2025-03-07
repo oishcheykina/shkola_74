@@ -61,48 +61,53 @@
 <body onload="startTime()">
     {% include 'details/header.html' %}
 
+
     <div class="container">
         <div class="row">
             {% include 'details/leftcolumn.html' %}
 
             <section class="col-md-8 col-sm-8">
                 <div class="col-right">
-                    {% for post in page_obj %}
-                    <div class="strip-lessons">
-                        <div class="row">
-                            <div class="col-md-3 col-xs-6">
-                                <div class="box-style-one"><img
-                                        src="{{ post.image.url }}"
-                                        alt="" class="picture img-responsive"></div>
+                    
+                    <h2 class="entry-title ">
+                        <h3 rel="bookmark ">{% trans 'Гордость школы' %}</h3>
+                    </h2>
+                    <div class="entry-meta">
+                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ teacherr.date|date:"j-m-Y, H:i" }}</span></span>
+                        <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">{% trans 'Главная' %}</a> / ---</span>
+                    </div>
+                    
+                    <div class="team-cards-wrapper">
+                        <div class="team-grid-three">
+                            <!-- 1-xodim -->
+                             {% for teacher in page_obj %}
+                            <div class="maktab-card-three">
+                                <div class="maktab-card-inner">
+                                    <div class="maktab-img-box-three">
+                                        <img src="{{ teacher.image.url }}" 
+                                             class="maktab-img-three" 
+                                             alt="Shukiryans Muxabbat Burxanovna">
+                                    </div>
+                                    <div class="maktab-info-three">
+                                        <h4 class="maktab-name-three">{{ teacher.name }}</h4>
+                                        <p class="maktab-position-three">{{ teacher.grade }}</p>
+                                        
+                                    </div>
+                                </div>
                             </div>
-                            <div class="clearfix visible-xs-block"></div>
-                            <div class="col-md-9">
-
-                                <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
-
-                                <p>
-                                    {{ post.content|truncatechars:230 }}
-                                </p>
-                                <ul class="data-lessons">
-                                    <li><i class="icon-time"></i>{{ post.created_at|time:"H:i" }} / {{ post.created_at|date:"d.m.Y" }}</li>
-                                    <li><i class="icon-cloud-download"></i><a
-                                            href="{{ post.get_absolute_url }}">{% trans 'Подробно' %}</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
-                    {% endfor %}
 
                     {% if page_obj.has_other_pages %}
 
-                    <div class="text-center">
+                            <div class="text-center">
                         <ul class="pagination">
                             <!-- Кнопка "Oldingi" (назад) -->
                             {% if page_obj.has_previous %}
-                                <li><a href="?page={{ page_obj.previous_page_number }}">{% trans 'Предыдущая' %}</a></li>
+                                <li><a href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
                             {% else %}
-                                <li><span>{% trans 'Предыдущая' %}</span></li>
+                                <li><span>Oldingi</span></li>
                             {% endif %}
                     
                             <!-- Всегда показываем первую страницу -->
@@ -136,21 +141,134 @@
                     
                             <!-- Кнопка "Keyingi" (вперёд) -->
                             {% if page_obj.has_next %}
-                                <li><a href="?page={{ page_obj.next_page_number }}">{% trans 'Следующая' %}</a></li>
+                                <li><a href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
                             {% else %}
-                                <li><span>{% trans 'Следующая' %}</span></li>
+                                <li><span>Keyingi</span></li>
                             {% endif %}
                         </ul>
-                    </div>
+                            </div>
 
                     {% endif %}
-
                 </div>
-
-
             </section>
-
+            
         </div>
+
+
+        <style>
+            maktab-ti{
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: #444;
+                font-weight: bold;
+                margin-top: 0;
+                margin-bottom: 10px;
+                   text-align: center;
+            }
+       .team-cards-wrapper {
+           padding: 20px 0;
+       }
+       
+       .team-grid-three {
+           display: grid;
+           grid-template-columns: repeat(3, 1fr);
+           gap: 15px;
+           grid-auto-rows: minmax(400px, auto);
+       }
+       
+       .maktab-card-three {
+           background: #fff;
+           border-radius: 12px;
+           overflow: hidden;
+           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+           box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+           position: relative;
+       }
+       
+       .maktab-card-three:hover {
+           transform: translateY(-5px);
+           box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+       }
+       
+       .maktab-img-box-three {
+           height: 320px;
+           overflow: hidden;
+           position: relative;
+       }
+       
+       .maktab-img-three {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           object-position: center center;
+           transition: transform 0.5s ease;
+       }
+       
+       .maktab-card-three:hover .maktab-img-three {
+           transform: scale(1.05);
+       }
+       
+       .maktab-info-three {
+           padding: 10px;
+           background: #fff;
+           position: relative;
+           z-index: 1;
+           text-align: center;
+          
+           
+       }
+       
+       .maktab-name-three {
+           color: #1709e2;
+           margin: 0 0 10px 0;
+           font-size: 1.5rem;
+           font-weight: 1000;
+           font-style: italic;
+           
+       }
+       
+       .maktab-position-three {
+           color: #7f8c8d;
+           font-size: 1.3rem;
+           line-height: 1.1;
+           margin-bottom: 10px;
+       }
+       
+       @media (max-width: 1200px) {
+           .team-grid-three {
+               grid-template-columns: repeat(2, 1fr);
+           }
+           
+           .maktab-img-box-three {
+               height: 280px;
+           }
+       }
+       
+       @media (max-width: 768px) {
+           .team-grid-three {
+               grid-template-columns: 1fr;
+           }
+           
+           .maktab-img-box-three {
+               height: 350px;
+           }
+           
+           .maktab-info-three {
+               padding: 0px;
+           }
+       }
+       
+       @media (max-width: 480px) {
+           .maktab-img-box-three {
+               height: 250px;
+           }
+       }
+       </style>
+
+
+
+
+
 
 
 
@@ -215,6 +333,9 @@
             }
         </style>
 
+
+
+
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -275,6 +396,7 @@
             });
         </script>
     </div><!-- end container-->
+
 
 
     {% include 'details/footer.html' %}

@@ -14,8 +14,7 @@
         title="Surxondaryo Viloyati Denov Tumani 74-maktab">
         {% if request.path != '/' %}
         <meta name="robots" content="noindex, follow">
-        {% endif %}
-    
+        {% endif %}    
     <link rel="alternate" type="application/rss+xml" title="Surxondaryo Viloyati Denov Tumani 74-maktab" href="/">
     <link href="{% static 'css/default.css' %}" rel="stylesheet" type="text/css">
     <script src="{% static 'js/jquery.js' %}"></script>
@@ -61,7 +60,6 @@
 <body onload="startTime()">
     {% include 'details/header.html' %}
 
-
     <div class="container">
         <div class="row">
             {% include 'details/leftcolumn.html' %}
@@ -100,85 +98,38 @@
                         }
                     </style>
                     <h2 class="entry-title">
-                        <h3 rel="bookmark">{% trans 'Гордость школы' %}</h3>
+                        <h3 rel="bookmark">{% trans 'Структурная организация' %}</h3>
                     </h2>
                     <div class="entry-meta">
-                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ teacherr.date|date:"j-m-Y, H:i" }}</span></span>
+                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ tarkibiy_tuzilma.date|date:"j-m-Y, H:i" }}</span></span>
                         <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">{% trans 'Главная' %}</a> / ---</span>
                     </div>
 
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="default-content">
+
+
+                                {% if tarkibiy_tuzilma.image %}
                                 <p>
-                                <div style="text-align:left;"><br></div>
-                                {% for teacher in page_obj %}
-                                <div style="text-align:left;">
-                                    <b>
-                                        <img src="{{ teacher.image.url }}"
-                                            class="fr-fic fr-dib fr-fil" style="width:139px;" alt="">
-                                    </b>
-                                </div>
-                                <div style="text-align:left;"><b>{{ teacher.name }}</b></div>
-                                <div style="text-align:left;">{{ teacher.field }}</div>
-                                <div style="text-align:left;">{% trans 'Класс' %}: {{ teacher.grade }}</div>
-                                {% endfor %}
+                                    <img src="{{ tarkibiy_tuzilma.image.url }}" class="fr-fic fr-dib" alt="">
                                 </p>
-                            </div>
-                            {% if page_obj.has_other_pages %}
-
-                        <div class="text-center">
-                            <ul class="pagination">
-                            <!-- Кнопка "Oldingi" (назад) -->
-                            {% if page_obj.has_previous %}
-                                <li><a href="?page={{ page_obj.previous_page_number }}">{% trans 'Предыдущая' %}</a></li>
-                            {% else %}
-                                <li><span>{% trans 'Предыдущая' %}</span></li>
-                            {% endif %}
-                    
-                            <!-- Всегда показываем первую страницу -->
-                            <li><a href="?page=1">1</a></li>
-                    
-                            <!-- Многоточие перед серединой, если нужно -->
-                            {% if page_obj.number > 4 %}
-                                <li><span>...</span></li>
-                            {% endif %}
-                    
-                            <!-- Основные страницы (исключаем 1 и последнюю) -->
-                            {% for num in page_obj.paginator.page_range %}
-                                {% if num > 1 and num < page_obj.paginator.num_pages %}
-                                    {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
-                                        {% if num == page_obj.number %}
-                                            <li><span class="nav_ext">{{ num }}</span></li>  {# Текущая страница #}
-                                        {% else %}
-                                            <li><a href="?page={{ num }}">{{ num }}</a></li>
-                                        {% endif %}
-                                    {% endif %}
                                 {% endif %}
-                            {% endfor %}
-                    
-                            <!-- Многоточие перед последней страницей, если нужно -->
-                            {% if page_obj.number < page_obj.paginator.num_pages|add:-3 %}
-                                <li><span>...</span></li>
-                            {% endif %}
-                    
-                            <!-- Всегда показываем последнюю страницу -->
-                            <li><a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></li>
-                    
-                            <!-- Кнопка "Keyingi" (вперёд) -->
-                            {% if page_obj.has_next %}
-                                <li><a href="?page={{ page_obj.next_page_number }}">{% trans 'Следующая' %}</a></li>
-                            {% else %}
-                                <li><span>{% trans 'Следующая' %}</span></li>
-                            {% endif %}
-                            </ul>
-                        </div>
 
-                            {% endif %}
+
+
+
+                            </div>
                         </div>
                     </div>
+
+
+
                 </div>
+
+
             </section>
+
         </div>
 
 
@@ -313,10 +264,8 @@
         </script>
     </div><!-- end container-->
 
-
-
     {% include 'details/footer.html' %}
-    <div id="toTop" style="display: none;"> <i class="fa-solid fa-arrow-up" style="color: #db0000; font-size: 30px;"></i></div>
+    <div id="toTop" style="display: none;">  <i class="fa-solid fa-arrow-up" style="color: #db0000; font-size: 30px;"></i>          </div>
     {% include 'details/scripts.html' %}
 
 
@@ -324,5 +273,3 @@
 </body>
 
 </html>
-
-<!-- Veb-sayt Cyber tomonidan Clon qilindi -->

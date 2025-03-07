@@ -95,7 +95,7 @@ def tarkibiy_tuzilma(request):
         'tarkibiy_tuzilma': tarkibiy_tuzilma,
         'yil_dasturi': yil_dasturi,
     }
-    return render(request, 'maktab/tarkibiy-tuzilma.html', dic)
+    return render(request, 'oqituvchilarga/tarkibiy-tuzilma.html', dic)
 
 def maktab_nizomi(request):
     admins = Administrators.objects.all()
@@ -141,7 +141,7 @@ def ish(request):
         'ish': ish,
         'yil_dasturi': yil_dasturi,
     }
-    return render(request, 'maktab/bosh-ish-orinlari.html', dic)
+    return render(request, 'oqituvchilarga/bosh-ish-orinlari.html', dic)
 #oqituvchilarga
 
 #oquvchilarga
@@ -373,7 +373,7 @@ def flag(request):
 def maktab_faxri(request):
     admins = Administrators.objects.all()
     teachers = Activist.objects.all().order_by('-date')
-    paginator = Paginator(teachers, 6)
+    paginator = Paginator(teachers, 27)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
     yil_dasturi = Yil_Dasturi.objects.first()
@@ -384,4 +384,20 @@ def maktab_faxri(request):
         'page_obj': page_obj,
         'teacherr': teacherr,
     }
-    return render(request, 'oqituvchilarga/maktab-jamoasi.html', dic)
+    return render(request, 'maktab/maktab-faxri.html', dic)
+
+def maktab_sportchilari(request):
+    admins = Administrators.objects.all()
+    teachers = Sportchi.objects.all().order_by('-date')
+    paginator = Paginator(teachers, 27)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
+    yil_dasturi = Yil_Dasturi.objects.first()
+    teacherr = Sportchi.objects.first()
+    dic = {
+        'admins': admins,
+        'yil_dasturi': yil_dasturi,
+        'page_obj': page_obj,
+        'teacherr': teacherr,
+    }
+    return render(request, 'maktab/maktab-sportchilari.html', dic)

@@ -68,71 +68,203 @@
 
             <section class="col-md-8 col-sm-8">
                 <div class="col-right">
-
-                    <style>
-                        .default-content img {
-                            max-width: 100%;
-                            display: inline-block;
-                            margin: 0 auto;
-                        }
-
-                        iframe {
-                            width: 700px !important;
-                            height: 400px !important;
-                        }
-                    </style>
-                    <style>
-                        table {
-                            font-family: arial, sans-serif;
-                            border-collapse: collapse;
-                            width: 100%;
-                        }
-
-                        td,
-                        th {
-                            border: 1px solid #dddddd;
-                            text-align: left;
-                            padding: 8px;
-                        }
-
-                        tr:nth-child(even) {
-                            background-color: #dddddd;
-                        }
-                    </style>
-                    <h2 class="entry-title">
-                        <h3 rel="bookmark">{% trans 'Свободные вакансии' %}</h3>
+                    
+                    <h2 class="entry-title ">
+                        <h3 rel="bookmark ">{% trans 'Спортсмены школы' %}</h3>
                     </h2>
+
                     <div class="entry-meta">
-                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ ish.date|date:"j-m-Y, H:i" }}</span></span>
+                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ teacherr.date|date:"j-m-Y, H:i" }}</span></span>
                         <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">{% trans 'Главная' %}</a> / ---</span>
                     </div>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="default-content">
-
-
-
-                                <p>
-                                <div style="text-align:justify;">{{ ish.content|linebreaks }}</div>
-                                <br><b>{{ ish.conclusion }}</b> <br>
-                                </p>
-
-
-
-
+                    
+                    <div class="team-cards-wrapper">
+                        <div class="team-grid-three">
+                            <!-- 1-xodim -->
+                             {% for teacher in page_obj %}
+                            <div class="maktab-card-three">
+                                <div class="maktab-card-inner">
+                                    <div class="maktab-img-box-three">
+                                        <img src="{{ teacher.image.url }}" 
+                                             class="maktab-img-three" 
+                                             alt="Shukiryans Muxabbat Burxanovna">
+                                    </div>
+                                    <div class="maktab-info-three">
+                                        <h4 class="maktab-name-three">{{ teacher.name }}</h4>
+                                        <p class="maktab-position-three">{{ teacher.grade }}</p>
+                                        
+                                    </div>
+                                </div>
                             </div>
+                            {% endfor %}
                         </div>
                     </div>
 
+                    {% if page_obj.has_other_pages %}
 
+                            <div class="text-center">
+                        <ul class="pagination">
+                            <!-- Кнопка "Oldingi" (назад) -->
+                            {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
+                            {% else %}
+                                <li><span>Oldingi</span></li>
+                            {% endif %}
+                    
+                            <!-- Всегда показываем первую страницу -->
+                            <li><a href="?page=1">1</a></li>
+                    
+                            <!-- Многоточие перед серединой, если нужно -->
+                            {% if page_obj.number > 4 %}
+                                <li><span>...</span></li>
+                            {% endif %}
+                    
+                            <!-- Основные страницы (исключаем 1 и последнюю) -->
+                            {% for num in page_obj.paginator.page_range %}
+                                {% if num > 1 and num < page_obj.paginator.num_pages %}
+                                    {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                                        {% if num == page_obj.number %}
+                                            <li><span class="nav_ext">{{ num }}</span></li>  {# Текущая страница #}
+                                        {% else %}
+                                            <li><a href="?page={{ num }}">{{ num }}</a></li>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                    
+                            <!-- Многоточие перед последней страницей, если нужно -->
+                            {% if page_obj.number < page_obj.paginator.num_pages|add:-3 %}
+                                <li><span>...</span></li>
+                            {% endif %}
+                    
+                            <!-- Всегда показываем последнюю страницу -->
+                            <li><a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></li>
+                    
+                            <!-- Кнопка "Keyingi" (вперёд) -->
+                            {% if page_obj.has_next %}
+                                <li><a href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                            {% else %}
+                                <li><span>Keyingi</span></li>
+                            {% endif %}
+                        </ul>
+                            </div>
 
+                    {% endif %}
                 </div>
-
-
             </section>
-
+            
         </div>
+
+
+        <style>
+            maktab-ti{
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: #444;
+                font-weight: bold;
+                margin-top: 0;
+                margin-bottom: 10px;
+                   text-align: center;
+            }
+       .team-cards-wrapper {
+           padding: 20px 0;
+       }
+       
+       .team-grid-three {
+           display: grid;
+           grid-template-columns: repeat(3, 1fr);
+           gap: 15px;
+           grid-auto-rows: minmax(400px, auto);
+       }
+       
+       .maktab-card-three {
+           background: #fff;
+           border-radius: 12px;
+           overflow: hidden;
+           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+           box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+           position: relative;
+       }
+       
+       .maktab-card-three:hover {
+           transform: translateY(-5px);
+           box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+       }
+       
+       .maktab-img-box-three {
+           height: 320px;
+           overflow: hidden;
+           position: relative;
+       }
+       
+       .maktab-img-three {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           object-position: center center;
+           transition: transform 0.5s ease;
+       }
+       
+       .maktab-card-three:hover .maktab-img-three {
+           transform: scale(1.05);
+       }
+       
+       .maktab-info-three {
+           padding: 10px;
+           background: #fff;
+           position: relative;
+           z-index: 1;
+           text-align: center;
+          
+           
+       }
+       
+       .maktab-name-three {
+           color: #1709e2;
+           margin: 0 0 10px 0;
+           font-size: 1.5rem;
+           font-weight: 1000;
+           font-style: italic;
+           
+       }
+       
+       .maktab-position-three {
+           color: #7f8c8d;
+           font-size: 1.3rem;
+           line-height: 1.1;
+           margin-bottom: 10px;
+       }
+       
+       @media (max-width: 1200px) {
+           .team-grid-three {
+               grid-template-columns: repeat(2, 1fr);
+           }
+           
+           .maktab-img-box-three {
+               height: 280px;
+           }
+       }
+       
+       @media (max-width: 768px) {
+           .team-grid-three {
+               grid-template-columns: 1fr;
+           }
+           
+           .maktab-img-box-three {
+               height: 350px;
+           }
+           
+           .maktab-info-three {
+               padding: 0px;
+           }
+       }
+       
+       @media (max-width: 480px) {
+           .maktab-img-box-three {
+               height: 250px;
+           }
+       }
+       </style>
 
 
 
@@ -267,6 +399,7 @@
     </div><!-- end container-->
 
 
+
     {% include 'details/footer.html' %}
     <div id="toTop" style="display: none;"> <i class="fa-solid fa-arrow-up" style="color: #db0000; font-size: 30px;"></i></div>
     {% include 'details/scripts.html' %}
@@ -276,5 +409,3 @@
 </body>
 
 </html>
-
-<!-- Veb-sayt Cyber tomonidan Clon qilindi -->

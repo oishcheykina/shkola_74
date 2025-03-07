@@ -77,3 +77,7 @@ class FlagTranslationOptions(TranslationOptions):
 @register(Activist)
 class ActivistTranslationOptions(TranslationOptions):
     fields = ('name',)
+    
+@register(Sportchi)
+class SportchiTranslationOptions(TranslationOptions):
+    fields = ('name',)

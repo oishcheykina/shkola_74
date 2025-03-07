@@ -32,6 +32,7 @@ urlpatterns = [
     path('gerb/', gerb, name='gerb'),
     path('gimn/', gimn, name='gimn'),
     path('flag/', flag, name='flag'),
-    path('maktab_faxri', maktab_faxri, name='maktab_faxri'),
+    path('maktab_faxri/', maktab_faxri, name='maktab_faxri'),
     path('matbubot_hizmati/davlat_dasturlari/davalat_dasturi/year/<slug:slug>/', davlat_dasturi, name='davlat_dasturi'),
+    path('maktab_sportchilari/', maktab_sportchilari, name='maktab_sportchilari'),
 ]

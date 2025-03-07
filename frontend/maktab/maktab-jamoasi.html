@@ -106,27 +106,31 @@
                         <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">{% trans 'Главная' %}</a> / ---</span>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="default-content">
-                                <p>
-                                <div style="text-align:left;"><br></div>
-                                {% for teacher in page_obj %}
-                                <div style="text-align:left;">
-                                    <b>
-                                        <img src="{{ teacher.image.url }}"
-                                            class="fr-fic fr-dib fr-fil" style="width:139px;" alt="">
-                                    </b>
+                    <div class="team-cards-wrapper">
+                        <div class="team-grid-three">
+                            <!-- 1-xodim -->
+                             {% for teacher in page_obj %}
+                            <div class="maktab-card-three">
+                                <div class="maktab-card-inner">
+                                    <div class="maktab-img-box-three">
+                                        <img src="{{ teacher.image.url }}" 
+                                             class="maktab-img-three" 
+                                             alt="Shukiryans Muxabbat Burxanovna">
+                                    </div>
+                                    <div class="maktab-info-three">
+                                        <h4 class="maktab-name-three">{{ teacher.name }}</h4>
+                                        <p class="maktab-position-three">{{ teacher.field }}</p>
+                                        
+                                    </div>
                                 </div>
-                                <div style="text-align:left;"><b>{{ teacher.name }}</b></div>
-                                <div style="text-align:left;">{{ teacher.field }}</div>
-                                <div style="text-align:left;">{% trans 'Телефон' %}: {{ teacher.phone_number }}</div>
-                                {% endfor %}
-                                </p>
                             </div>
-                            {% if page_obj.has_other_pages %}
+                            {% endfor %}
+                        </div>
+                    </div>
 
-                            <div class="text-center">
+                    {% if page_obj.has_other_pages %}
+
+                    <div class="text-center">
                         <ul class="pagination">
                             <!-- Кнопка "Oldingi" (назад) -->
                             {% if page_obj.has_previous %}
@@ -173,14 +177,122 @@
                         </ul>
                             </div>
 
-                            {% endif %}
-                        </div>
-                    </div>
+                    {% endif %}
                 </div>
             </section>
         </div>
 
 
+
+        <style>
+            maktab-ti{
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: #444;
+                font-weight: bold;
+                margin-top: 0;
+                margin-bottom: 10px;
+                   text-align: center;
+            }
+       .team-cards-wrapper {
+           padding: 20px 0;
+       }
+       
+       .team-grid-three {
+           display: grid;
+           grid-template-columns: repeat(3, 1fr);
+           gap: 15px;
+           grid-auto-rows: minmax(400px, auto);
+       }
+       
+       .maktab-card-three {
+           background: #fff;
+           border-radius: 12px;
+           overflow: hidden;
+           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+           box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+           position: relative;
+       }
+       
+       .maktab-card-three:hover {
+           transform: translateY(-5px);
+           box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+       }
+       
+       .maktab-img-box-three {
+           height: 320px;
+           overflow: hidden;
+           position: relative;
+       }
+       
+       .maktab-img-three {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           object-position: center center;
+           transition: transform 0.5s ease;
+       }
+       
+       .maktab-card-three:hover .maktab-img-three {
+           transform: scale(1.05);
+       }
+       
+       .maktab-info-three {
+           padding: 10px;
+           background: #fff;
+           position: relative;
+           z-index: 1;
+           text-align: center;
+          
+           
+       }
+       
+       .maktab-name-three {
+           color: #1709e2;
+           margin: 0 0 10px 0;
+           font-size: 1.5rem;
+           font-weight: 1000;
+           font-style: italic;
+           
+       }
+       
+       .maktab-position-three {
+           color: #7f8c8d;
+           font-size: 1.3rem;
+           line-height: 1.1;
+           margin-bottom: 10px;
+       }
+       
+       @media (max-width: 1200px) {
+           .team-grid-three {
+               grid-template-columns: repeat(2, 1fr);
+           }
+           
+           .maktab-img-box-three {
+               height: 280px;
+           }
+       }
+       
+       @media (max-width: 768px) {
+           .team-grid-three {
+               grid-template-columns: 1fr;
+           }
+           
+           .maktab-img-box-three {
+               height: 350px;
+           }
+           
+           .maktab-info-three {
+               padding: 0px;
+           }
+       }
+       
+       @media (max-width: 480px) {
+           .maktab-img-box-three {
+               height: 250px;
+           }
+       }
+       </style>
 
 
 
@@ -323,5 +435,3 @@
 </body>
 
 </html>
-
-<!-- Veb-sayt Cyber tomonidan Clon qilindi -->

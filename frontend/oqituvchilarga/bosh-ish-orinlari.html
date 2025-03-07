@@ -14,7 +14,8 @@
         title="Surxondaryo Viloyati Denov Tumani 74-maktab">
         {% if request.path != '/' %}
         <meta name="robots" content="noindex, follow">
-        {% endif %}    
+        {% endif %}
+    
     <link rel="alternate" type="application/rss+xml" title="Surxondaryo Viloyati Denov Tumani 74-maktab" href="/">
     <link href="{% static 'css/default.css' %}" rel="stylesheet" type="text/css">
     <script src="{% static 'js/jquery.js' %}"></script>
@@ -60,6 +61,7 @@
 <body onload="startTime()">
     {% include 'details/header.html' %}
 
+
     <div class="container">
         <div class="row">
             {% include 'details/leftcolumn.html' %}
@@ -98,10 +100,10 @@
                         }
                     </style>
                     <h2 class="entry-title">
-                        <h3 rel="bookmark">{% trans 'Структурная организация' %}</h3>
+                        <h3 rel="bookmark">{% trans 'Свободные вакансии' %}</h3>
                     </h2>
                     <div class="entry-meta">
-                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ tarkibiy_tuzilma.date|date:"j-m-Y, H:i" }}</span></span>
+                        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ ish.date|date:"j-m-Y, H:i" }}</span></span>
                         <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">{% trans 'Главная' %}</a> / ---</span>
                     </div>
 
@@ -110,11 +112,11 @@
                             <div class="default-content">
 
 
-                                {% if tarkibiy_tuzilma.image %}
+
                                 <p>
-                                    <img src="{{ tarkibiy_tuzilma.image.url }}" class="fr-fic fr-dib" alt="">
+                                <div style="text-align:justify;">{{ ish.content|linebreaks }}</div>
+                                <br><b>{{ ish.conclusion }}</b> <br>
                                 </p>
-                                {% endif %}
 
 
 
@@ -264,8 +266,9 @@
         </script>
     </div><!-- end container-->
 
+
     {% include 'details/footer.html' %}
-    <div id="toTop" style="display: none;">  <i class="fa-solid fa-arrow-up" style="color: #db0000; font-size: 30px;"></i>          </div>
+    <div id="toTop" style="display: none;"> <i class="fa-solid fa-arrow-up" style="color: #db0000; font-size: 30px;"></i></div>
     {% include 'details/scripts.html' %}
 
 
@@ -273,5 +276,3 @@
 </body>
 
 </html>
-
-<!-- Veb-sayt Cyber tomonidan Clon qilindi -->

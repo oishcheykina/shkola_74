@@ -61,7 +61,7 @@ class Teacher(models.Model):
 class Lavozim_Majburiyatlari(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     
     def __str__(self):
@@ -74,7 +74,7 @@ class Lavozim_Majburiyatlari(models.Model):
 class Tarkibiy_Tuzilma(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     
     def __str__(self):
@@ -87,7 +87,7 @@ class Tarkibiy_Tuzilma(models.Model):
 class Maktab_Nizomi(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     
     def __str__(self):
@@ -100,7 +100,7 @@ class Maktab_Nizomi(models.Model):
 class Maktab_Madhiyasi(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     
     def __str__(self):
@@ -124,7 +124,7 @@ class Qubul_Kunlari(models.Model):
     
 class Ish(models.Model):
     date = models.DateTimeField(auto_now=True)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     conclusion = models.CharField(max_length=150)
     
@@ -174,7 +174,7 @@ class Qongiroqlar_Jadvali(models.Model):
 class Imtihon_Materiallari(models.Model):
     year = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     
     def __str__(self):
         return self.year
@@ -266,6 +266,7 @@ class Announcement(models.Model):
 class Photo(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='photo_gallery/')
+    content = RichTextUploadingField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now=True)
     
     def get_absolute_url(self):
@@ -278,7 +279,7 @@ class Photo(models.Model):
 class Davlat_Dasturlari(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     
     def __str__(self):
@@ -294,7 +295,7 @@ class Davlat_Dasturlari(models.Model):
 class Prezident_Qarori(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     
     def __str__(self):
@@ -307,7 +308,7 @@ class Prezident_Qarori(models.Model):
 class Xalq_Talim(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     
     def __str__(self):
@@ -322,7 +323,7 @@ class Xalq_Talim(models.Model):
 class Gerb(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     
     def __str__(self):
@@ -335,7 +336,7 @@ class Gerb(models.Model):
 class Gimn(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     
     def __str__(self):
@@ -348,7 +349,7 @@ class Gimn(models.Model):
 class Flag(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     
     def __str__(self):
@@ -373,7 +374,7 @@ class Activist(models.Model):
 class Huquq_Majburiyatlar(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     
     def __str__(self):
         return self.title
@@ -385,7 +386,7 @@ class Huquq_Majburiyatlar(models.Model):
 class Oquvchilarni_Qabul_Qilish(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now=True)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     
     def __str__(self):
         return self.title
@@ -400,3 +401,15 @@ class Main_Carousel(models.Model):
     class Meta:
         verbose_name = 'Главная карусель'
         verbose_name_plural = 'Главная карусель'
+        
+class Sportchi(models.Model):
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='teachers_photo/')
+    grade = models.CharField(blank= True, null = True, max_length=250)
+    date = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = 'Спортсмен'
+        verbose_name_plural = 'Спортсмены'
