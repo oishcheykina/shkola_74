@@ -21,6 +21,8 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.views.static import serve
 from django.urls import re_path
+from app.views import *
+from django.conf.urls import handler404
 
 urlpatterns = [
     path('vippanel/', admin.site.urls),
@@ -42,3 +44,6 @@ if settings.DEBUG is False:
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Для обработки ошибки 404
+handler404 = custom_page_not_found

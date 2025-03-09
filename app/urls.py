@@ -1,14 +1,10 @@
 from django.urls import path
 from .views import *
-from django.conf.urls import handler404
-
-handler404 = custom_page_not_found
 
 
 urlpatterns = [
     path('', home, name='home'),
     path('principal/', principal, name='principal'),
-    path('matbubot_hizmati/elonlar/<slug:slug>/', announcement, name='announcement'),
     path('more/<slug:slug>/', more, name='more'),
     path('school_team/', school_team, name='school_team'),
     path('lavozim_majburiyatlari/', lavozim_majburiyatlari, name='lavozim_majburiyatlari'),
@@ -26,6 +22,8 @@ urlpatterns = [
     path('matbubot_hizmati/elonlar/', announcements, name='announcements'),
     path('photo_gallery', foto_galery, name='foto_galery'),
     path('matbubot_hizmati/photo_galery/photo/<int:photo_id>', more_photo, name='more_photo'),
+    path('matbuot-xizmati/videogalereya/', videogalereya, name= 'videogalereya'),
+    path('matbuot-xizmati/videogalereya/<slug:slug>', video, name= 'video'),
     path('davlat_dasturlari/', davlat_dasturlari, name='davlat_dasturlari'),
     path('xalq_talimi/', halq_talim, name='halq_talim'),
     path('prezident_qarori/', prezident_farmonlari, name='prezident_qarori'),

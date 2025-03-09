@@ -16,12 +16,23 @@ class Category(models.Model):
         verbose_name = 'Категория кружков'
         verbose_name_plural = 'Категории кружков'
     
+class Popular(models.Model):
+    name = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = 'Объявления'
+        verbose_name_plural = 'Объявления'
+    
 class Post(models.Model):
     image = models.ImageField(upload_to='post_images/')
     slug = models.SlugField(unique=True)
     title = models.CharField(max_length=200, unique=True)
     content = RichTextUploadingField()
     created_at = models.DateTimeField(auto_now_add=True)
+    category = models.ForeignKey('Popular', blank=True, on_delete = models.CASCADE, null=True)
     views = models.PositiveIntegerField(default=0)
     
     def __str__(self):
@@ -192,7 +203,7 @@ class Tugaraklar(models.Model):
     days = models.TextField()
     time = models.TextField()
     teacher = models.CharField(max_length=255)
-    category = models.ForeignKey('Category', blank='true', on_delete = models.CASCADE, null=True)
+    category = models.ForeignKey('Category', blank=True, on_delete = models.CASCADE, null=True)
     date = models.DateTimeField(auto_now=True)
     
     def __str__(self):
@@ -236,33 +247,6 @@ class Principal(models.Model):
         verbose_name_plural = 'Директор'
     
 #matbubot hizmati
-
-class Announcement(models.Model):
-    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
-    slug = models.SlugField(unique=True)
-    title = models.CharField(max_length=200, unique=True)
-    content = RichTextUploadingField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return self.title
-    
-    def get_absolute_url(self):
-        return reverse("announcement", kwargs={"slug": self.slug})
-    
-    class Meta:
-        verbose_name = 'Объявление'
-        verbose_name_plural = 'Объявления'
-        
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)  # Сохраняем новый пост
-
-        # Проверяем количество постов
-        if Announcement.objects.count() > 100:
-            oldest = Announcement.objects.order_by('created_at').first()  # Самый старый пост
-            if oldest:
-                oldest.delete()
-    
 class Photo(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='photo_gallery/')
@@ -317,6 +301,23 @@ class Xalq_Talim(models.Model):
     class Meta:
         verbose_name = 'Министерство образования'
         verbose_name_plural = 'Министерство образования'
+        
+class Video_Galereya(models.Model):
+    slug = models.SlugField(unique=True)
+    title = models.CharField(max_length=200)
+    video = models.URLField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='video_galereya_images/')
+    
+    def get_absolute_url(self):
+        return reverse("video", kwargs={"slug": self.slug})
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Видео галерея'
+        verbose_name_plural = 'Видео галерея'
     
 #davlat ramzlari
 

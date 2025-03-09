@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load youtube_filter %}
 
 <!DOCTYPE html>
 <html lang="en" class=" js no-touch csstransforms csstransitions">
@@ -25,6 +26,8 @@
     
         <!-- Favicons-->
         <link rel="shortcut icon" href="http://www.ansonika.com/edu/img/favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
         <!-- Mobile Specific Metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -97,19 +100,18 @@
             }
         </style>
 <h2 class="entry-title">
-    <h3 rel="bookmark">{{ post.title }}</h3>
+    <h3 rel="bookmark">{{ video.title }}</h3>
 </h2>
 <div class="entry-meta">
-    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ post.created_at|date:"j-m-Y, H:i" }}</span></span>
-    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh sahifa</a> / Yangiliklar / E'lonlar</span>
+    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ video.created_at|date:"j-m-Y, H:i" }}</span></span>
+    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">{% trans 'Главная' %}</a> / {% trans 'Видеогалерея' %}</span>
 </div>
 
 <div class="row">
     <div class="col-lg-12">
         <div class="default-content">
             	<p>
-                <img src="{{ post.image.url }}" class="fr-fic fr-dib" alt=""><div style="text-align:justify;"><br></div>
-                <div style="text-align:justify;">{{ post.content }}</div>
+                    <!--dle_media_begin:https://www.youtube.com/watch?v=9K6b1fFmkfY--><iframe width="356" height="200" src="{{ video.video }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="{{ video.title }}"></iframe><!--dle_media_end--><br><br><img style="display:none;" src="{{ video.image.url }}" class="fr-fic fr-dib" alt="">
             	</p>
             </div>
         </div>
@@ -117,6 +119,14 @@
 </div>
 </section>
 </div>
+
+<style>
+	iframe { 
+        display: block !important;
+        width: 100% !important;
+    
+    }
+</style>
       <style media="screen">
       .linkText.linkText3 li {
   padding: 0px 10px 0px 80px;

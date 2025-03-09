@@ -237,7 +237,7 @@ def news(request):
 
 def announcements(request):
     admins = Administrators.objects.all()
-    announcements = Announcement.objects.all().order_by('-created_at')
+    announcements = Post.objects.filter(category__name="Объявления").order_by('-created_at')
     paginator = Paginator(announcements, 6)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
@@ -290,17 +290,6 @@ def davlat_dasturi(request, slug):
     }
     return render(request, 'matbuot-xizmati/davlat_dasturi.html', dic)
 
-def announcement(request, slug):
-    admins = Administrators.objects.all()
-    post = get_object_or_404(Announcement, slug=slug)
-    yil_dasturi = Yil_Dasturi.objects.first()
-    dic = {
-        'admins': admins,
-        'post': post,
-        'yil_dasturi': yil_dasturi,
-    }
-    return render(request, 'announcement.html', dic)
-
 def more_photo(request, photo_id):
     admins = Administrators.objects.all()
     photo = get_object_or_404(Photo, id=photo_id)
@@ -311,6 +300,31 @@ def more_photo(request, photo_id):
         'yil_dasturi': yil_dasturi,
     }
     return render(request, 'matbuot-xizmati/more_photo.html', dic)
+
+def videogalereya(request):
+    admins = Administrators.objects.all()
+    yil_dasturi = Yil_Dasturi.objects.first()
+    videos_main = Video_Galereya.objects.all().order_by('-created_at')
+    paginator = Paginator(videos_main, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)# Текущее содержимое левого блока
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'admins': admins,  # Текущее содержимое левого блока
+        'page_obj': page_obj,# Текущее содержимое левого блока
+    }       
+    return render(request,'matbuot-xizmati/videogalereya.html' , dic )
+
+def video(request, slug):
+    admins = Administrators.objects.all()
+    yil_dasturi = Yil_Dasturi.objects.first()
+    video = get_object_or_404(Video_Galereya, slug=slug)
+    dic = {
+        'video': video,
+        'yil_dasturi': yil_dasturi,
+        'admins': admins,  # Текущее содержимое левого блока
+    }
+    return render(request,'matbuot-xizmati/video.html', dic )
 
 
 #normativ hujjatlar
