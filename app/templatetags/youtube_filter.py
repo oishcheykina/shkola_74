@@ -1,23 +1,20 @@
 import re
 from django import template
-from django.utils.safestring import mark_safe
 
 register = template.Library()
 
-YOUTUBE_REGEX = r'(https?://www\.youtube\.com/watch\?v=|https?://youtu\.be/)([\w-]+)'
+def replace_youtube_links(content):
+    youtube_regex = r"https?://(?:www\.)?(?:youtube\.com/watch\?v=|youtu\.be/)([\w-]+)"
+    
+    def replacement(match):
+        video_id = match.group(1)
+        youtube_url = f"https://www.youtube.com/watch?v={video_id}"
+        iframe_code = f'<!--dle_media_begin:{youtube_url}--><iframe width="100%" src="https://www.youtube.com/embed/{video_id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><!--dle_media_end-->'
+        return iframe_code
 
-@register.filter(name='youtube_iframe')
-def youtube_iframe(value):
-    """Заменяет ссылку YouTube на адаптивный iframe без обрезки видео"""
-    match = re.search(YOUTUBE_REGEX, value)
-    if match:
-        video_id = match.group(2)
-        iframe_code = (
-            f'<div class="video-container">'
-            f'<iframe src="https://www.youtube.com/embed/{video_id}?rel=0&modestbranding=1&showinfo=0&controls=1&fs=1&playsinline=1" '
-            f'frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" '
-            f'allowfullscreen></iframe>'
-            f'</div>'
-        )
-        return mark_safe(iframe_code)
-    return value
+    return re.sub(youtube_regex, replacement, content)
+
+@register.filter(name='youtube_embed')
+def youtube_embed(content):
+    """Фильтр для замены ссылок на YouTube на iframe-код"""
+    return replace_youtube_links(content)

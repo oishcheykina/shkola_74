@@ -107,12 +107,20 @@
     <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">{% trans 'Главная' %}</a> / {% trans 'Новости' %}</span>
 </div>
 
+<style>
+	iframe { 
+        display: block !important;
+        width: 100% !important;
+    
+    }
+</style>
+
 <div class="row">
     <div class="col-lg-12">
         <div class="default-content">
             	<p>
                 <img src="{{ post.image.url }}" class="fr-fic fr-dib" alt=""><div style="text-align:justify;"><br></div>
-                <div style="text-align:justify;">{{ post.content|youtube_iframe|safe }}</div>
+                <div style="text-align:justify;">{{ post.content|youtube_embed|safe }}</div>
             	</p>
                 <div style="text-align:justify;"><i class="fa-regular fa-eye"></i> views: {{ post.views }}</div>
             </div>
